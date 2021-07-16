@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
@@ -13,6 +14,34 @@
     <title>Game Review</title>
 </head>
 <body>
+
+    <header>
+        <!-- top navbar -->
+        <nav class="nav-extended grey darken-4">
+            <div class="nav-wrapper">
+              <a href="{{ url_for('get_games') }}" class="brand-logo left">Game Review</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="large material-icons">menu</i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="{{ url_for('get_games') }}">Home</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">Log Out</a></li>
+                <li><a href="#">Log In</a></li>
+                <li><a href="#">Register</a></li>
+              </ul>
+            </div>
+          </nav>
+        
+          <!-- mobile sidenav  -->
+          <ul class="sidenav red darken-3" id="mobile-demo">
+            <li><h4 class="center-align">Game Review</h4></li>
+            <li><a href="{{ url_for('get_games') }}">Home</a></li>
+            <li><a href="#">Games</a></li>
+            <li><a href="#">Log Out</a></li>
+            <li><a href="#">Log In</a></li>
+            <li><a href="#">Register</a></li>
+          </ul>
+    </header>
+
     {% block content %}
     {% endblock %}
 
