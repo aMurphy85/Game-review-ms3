@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Review</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>I'm extending the base template</h2>
+
     {% for game in games %}
-    {{ game.release_date }}<br>
-    {{ game.game_genre }}<br>
-    {{ game.num_of_players }}<br>
-    {{ game.game_developers }}<br>
-    {{ game.game_platforms }}<br>
-    {{ game.game_description }}<br>
+        {{ game.release_date }}<br>
+        {{ game.game_genre }}<br>
+        {{ game.num_of_players }}<br>
+        {{ game.game_developers }}<br>
+        {{ game.game_platforms }}<br>
+        {{ game.game_description }}<br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
