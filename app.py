@@ -61,6 +61,8 @@ def login():
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(request.form.get("username")))
+                    return redirect(url_for(
+                            "get_games", username=session["user"]))
             else:
                 # invalid password match
                 flash("Invalid Username and/or Password")
@@ -72,6 +74,14 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+@app.route("/logout")
+def logout():
+    # remove user session cookies
+    flash("Logged Out Successfully!")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":

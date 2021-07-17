@@ -24,9 +24,12 @@
               <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('get_games') }}">Home</a></li>
                 <li><a href="#">Games</a></li>
-                <li><a href="#">Log Out</a></li>
-                <li><a href="{{ url_for('login') }}">Log In</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
+                {% if session.user %}
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                {% endif %} 
               </ul>
             </div>
           </nav>
@@ -36,9 +39,12 @@
             <li><h4 class="center-align white-text">Game Review</h4></li>
             <li><a class="white-text" href="{{ url_for('get_games') }}">Home</a></li>
             <li><a class="white-text" href="#">Games</a></li>
-            <li><a class="white-text" href="#">Log Out</a></li>
-            <li><a class="white-text" href="{{ url_for('login') }}">Log In</a></li>
-            <li><a class="white-text" href="{{ url_for('register') }}">Register</a></li>
+            {% if session.user %}
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">Log In</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% endif %}
           </ul>
     </header>
 
@@ -59,6 +65,8 @@
       {% block content %}
       {% endblock %}
     </main>
+
+    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
