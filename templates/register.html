@@ -4,13 +4,14 @@
     <h2 class="center-align">Register</h2>
 
     <div class="row">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+        <form class="col s12 m10 offset-m1" method="POST" action="{{ url_for('register') }}">
             <div class="card-panel grey darken-4">
                 <!-- username input -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix white-text">person_add</i>
-                        <input id="username" name="username" type="text" class="validate white-text">
+                        <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate white-text" required>
                         <label for="username">Username</label>
                     </div>
                 </div>
@@ -18,13 +19,15 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix white-text">lock</i>
-                        <input id="password" name="password"  type="password" class="validate white-text">
+                        <input id="password" name="password"  type="password" minlength="5" maxlength="15"
+                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate white-text" required>
                         <label for="password">Password</label>
                     </div>
                 </div>
                 <!-- submit button -->
                 <div class="row center-align">
-                    <button class="btn waves-effect red darken-3" type="submit" name="action">Register
+                    <button class="btn waves-effect red darken-3" type="submit" name="action">
+                        Register
                         <i class="material-icons right">send</i>
                     </button>
                 </div>
