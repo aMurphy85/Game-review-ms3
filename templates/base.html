@@ -25,7 +25,7 @@
                 <li><a href="{{ url_for('get_games') }}">Home</a></li>
                 <li><a href="#">Games</a></li>
                 <li><a href="#">Log Out</a></li>
-                <li><a href="#">Log In</a></li>
+                <li><a href="{{ url_for('login') }}">Log In</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
               </ul>
             </div>
@@ -37,7 +37,7 @@
             <li><a class="white-text" href="{{ url_for('get_games') }}">Home</a></li>
             <li><a class="white-text" href="#">Games</a></li>
             <li><a class="white-text" href="#">Log Out</a></li>
-            <li><a class="white-text" href="#">Log In</a></li>
+            <li><a class="white-text" href="{{ url_for('login') }}">Log In</a></li>
             <li><a class="white-text" href="{{ url_for('register') }}">Register</a></li>
           </ul>
     </header>
@@ -48,7 +48,7 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes">
-                        <h3 class="red darken-3 white-text center-align">{{ message }}</h3>
+                        <h4 class="red darken-3 white-text center-align">{{ message }}</h4>
                     </div>
                 {% endfor %}
             {% endif %}
