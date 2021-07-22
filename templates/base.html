@@ -17,7 +17,8 @@
 
     <header>
         <!-- top navbar -->
-        <nav class="nav-extended black">
+        <div class="navbar-fixed">
+            <nav class="nav-extended black">
             <div class="nav-wrapper">
               <a href="{{ url_for('get_games') }}" class="brand-logo left">Game Review</a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="large material-icons">menu</i></a>
@@ -33,6 +34,7 @@
               </ul>
             </div>
           </nav>
+        </div>
         
           <!-- mobile sidenav  -->
           <ul class="sidenav grey darken-3" id="mobile-demo">
