@@ -2,7 +2,23 @@
     color: #fafafa;
 }
 
+body {
+    background-color: #000000;
+}
+
 .flashes h4 {
     line-height: 2;
     padding: 1px;
 }
+
+.main-image {
+    width:85%;
+    height:500px;
+    margin: auto;
+}
+
+img {
+    width:100%;
+    height:100%;
+}
+

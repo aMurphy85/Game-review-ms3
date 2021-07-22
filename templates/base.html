@@ -17,7 +17,7 @@
 
     <header>
         <!-- top navbar -->
-        <nav class="nav-extended grey darken-4">
+        <nav class="nav-extended black">
             <div class="nav-wrapper">
               <a href="{{ url_for('get_games') }}" class="brand-logo left">Game Review</a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="large material-icons">menu</i></a>
@@ -42,8 +42,8 @@
             {% if session.user %}
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
-                <li><a href="{{ url_for('login') }}">Log In</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a class="white-text" href="{{ url_for('login') }}">Log In</a></li>
+                <li><a class="white-text" href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
           </ul>
     </header>
@@ -60,13 +60,11 @@
             {% endif %}
         {% endwith %}
     </section>
+        
+        {% block content %}
+        {% endblock %}
 
-    <main class="container">
-      {% block content %}
-      {% endblock %}
     </main>
-
-    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
