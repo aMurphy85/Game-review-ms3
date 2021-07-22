@@ -22,3 +22,22 @@ img {
     height:100%;
 }
 
+.header {
+    color: rgba(83, 82, 82, 1);
+    margin: 0;
+    padding: 40px;
+    letter-spacing: 3px;
+}
+
+.game-tile {
+    height: 180px;
+    border-radius: 30px;
+}
+
+p {
+    margin: 0 0 15px 0;
+}
+
+.more-games-btn {
+    margin: 40px;
+}
