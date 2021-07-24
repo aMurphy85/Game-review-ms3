@@ -50,6 +50,11 @@ img {
 .game-tile {
     height: 180px;
     border-radius: 30px;
+    padding: 0;
+}
+
+.game-title {
+    margin: 10px;
 }
 
 p {

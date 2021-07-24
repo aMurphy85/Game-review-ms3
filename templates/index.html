@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-    
+    <!-- main image -->
     <div class="main-image">
         <img src="https://i.redd.it/m0tjpazeuj611.jpg" alt="">        
     </div>
 
+    <!-- Information text overlapping image -->
     <div class="row">
         <div class="col s12 m5 offset-m1 l4 offset-l2 top-left white-text center-align">
             <h4>Welcome To Game Review</h4>
@@ -29,6 +30,7 @@
                     Connect with others
                 </li>
             </ul>
+            <!-- register button -->
             <div class="row center-align">
                 <button class="btn waves-effect red darken-3 register-btn" type="submit" name="action">
                     Register
@@ -38,35 +40,78 @@
         </div>
     </div>
 
+    <!-- game catergory title -->
     <div class="container">
         <h2 class="center-align header">Most Popular Games</h2>
 
+        <!-- game tiles -->
         <div class="row">
             <div class="col s12 m6 l4">
-                <img class="game-tile" src="https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/warzone/common/social-share/social-share-zeus-s4-wz.jpg" alt="">
-                <p class="white-text">Game Tile</p>
+                <!-- modal trigger -->
+                <a class="waves-effect waves-light btn modal-trigger game-tile" href="#modal1">
+                    <img src="https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/warzone/common/social-share/social-share-zeus-s4-wz.jpg" alt="">
+                </a>                
             </div>
+
             <div class="col s12 m6 l4">
-                <img class="game-tile" src="https://i.stack.imgur.com/dqVlX.png" alt="">
-                <p class="white-text">Game Tile</p>
+                <!-- modal trigger -->
+                <a class="waves-effect waves-light btn modal-trigger game-tile" href="#modal1">
+                    <img class="game-tile" src="https://meups.com.br/wp-content/uploads/2015/03/Grand-Theft-Auto-V.jpg" alt="">
+                </a>                
             </div>
+
             <div class="col s12 m6 l4">
-                <img class="game-tile" src="https://animal-crossing.com/new-horizons/assets/img/share-tw.jpg" alt="">
-                <p class="white-text">Game Tile</p>
+                <!-- modal trigger -->
+                <a class="waves-effect waves-light btn modal-trigger game-tile" href="#modal1">
+                    <img class="game-tile" src="https://cdn1.dotesports.com/wp-content/uploads/2019/09/12195522/league-of-legends.jpg" alt="">
+                </a>                
             </div>
+
             <div class="col s12 m6 l4">
-                <img class="game-tile" src="https://meups.com.br/wp-content/uploads/2015/03/Grand-Theft-Auto-V.jpg" alt="">
-                <p class="white-text">Game Tile</p>
+                <p class="game-title white-text">Game Tile</p>
             </div>
+
             <div class="col s12 m6 l4">
-                <img class="game-tile" src="https://cdn1.dotesports.com/wp-content/uploads/2019/09/12195522/league-of-legends.jpg" alt="">
-                <p class="white-text">Game Tile</p>
+                <p class="game-title white-text">Game Tile</p>
             </div>
+            
             <div class="col s12 m6 l4">
-                <img class="game-tile" src="https://xboxplay.games/uploadStream/15450.jpg" alt="">
-                <p class="white-text">Game Tile</p>
+                <p class="game-title white-text">Game Tile</p>
             </div>
-        </div>
+
+            <div class="col s12 m6 l4">
+                <!-- modal trigger -->
+                <a class="waves-effect waves-light btn modal-trigger game-tile" href="#modal1">
+                    <img class="game-tile" src="https://xboxplay.games/uploadStream/15450.jpg" alt="">
+                </a>                
+            </div>
+
+            <div class="col s12 m6 l4">
+                <!-- modal trigger -->
+                <a class="waves-effect waves-light btn modal-trigger game-tile" href="#modal1">
+                    <img class="game-tile" src="https://i.stack.imgur.com/dqVlX.png" alt="">
+                </a>                
+            </div>
+
+            <div class="col s12 m6 l4">
+                <!-- modal trigger -->
+                <a class="waves-effect waves-light btn modal-trigger game-tile" href="#modal1">
+                    <img class="game-tile" src="https://animal-crossing.com/new-horizons/assets/img/share-tw.jpg" alt="">
+                </a>                
+            </div>
+
+            <div class="col s12 m6 l4">
+                <p class="game-title white-text">Game Tile</p>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <p class="game-title white-text">Game Tile</p>
+            </div>
+            
+            <div class="col s12 m6 l4">
+                <p class="game-title white-text">Game Tile</p>
+            </div>
+        </div>        
     </div>
 
     <div class="row center-align">
@@ -74,6 +119,17 @@
             More Games
             <i class="material-icons right">send</i>
         </button>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer">
+        <div class="modal-content">
+          <h4>Modal Header</h4>
+          <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
     </div>
 
 {% endblock %}
