@@ -1,6 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2 class="center-align">Latest Games</h2>    
+    <div class="game-container center-align">
+
+        <h2 class="center-align header">Games</h2>
+
+        <div class="row">
+            {% for game in games %}
+            
+                <div class="col s12 m6 l4 game-tile">
+                    <img class="game-img" src="{{ game.game_url }}" alt="">
+                    <p class="game-title white-text">{{ game.game_title }}</p>
+                </div>
+            
+            {% endfor %}
+        </div>
+        
+    </div>
+    
+    
 
 {% endblock %}

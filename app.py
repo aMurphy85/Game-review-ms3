@@ -19,10 +19,9 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_games")
-def get_games():
-    games = mongo.db.games.find()
-    return render_template("index.html", games=games)
+@app.route("/home")
+def home():
+    return render_template("index.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -82,6 +81,12 @@ def logout():
     flash("Logged Out Successfully!")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/get_games")
+def get_games():
+    games = mongo.db.games.find()
+    return render_template("games.html", games=games)
 
 
 if __name__ == "__main__":

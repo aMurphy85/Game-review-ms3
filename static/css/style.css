@@ -47,18 +47,20 @@ img {
     letter-spacing: 3px;
 }
 
-.game-tile {
+.game-container {
+    margin: auto;
+    text-align: center;
+    width: 80%;
+}
+
+.game-img {
     height: 180px;
     border-radius: 30px;
     padding: 0;
 }
 
-.game-title {
-    margin: 10px;
-}
-
 p {
-    margin: 0 0 15px 0;
+    margin: 10px 0 30px 3px;
 }
 
 .more-games-btn {
