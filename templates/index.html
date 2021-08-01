@@ -32,29 +32,75 @@
             </ul>
             <!-- register button -->
             <div class="row center-align">
-                <button class="btn waves-effect red darken-3 register-btn" type="submit" name="action">
+                <a class="btn waves-effect red darken-3 register-btn" href="{{ url_for('register') }}" type="submit" name="action">
                     Register
                     <i class="material-icons right">send</i>
-                </button>
+                </a>
             </div>
         </div>
     </div>
 
     <!-- game catergory title -->
-    <div class="container">
+    <div class="game-container center-align">
+
+        <h2 class="center-align header">Most popular games</h2>
+
         <div class="row">
-            <h2 class="center-align header">Most popular games</h2>
+            <div class="col s12 m6 l4 game-tile">
+                <img class="game-img" src="https://cdn.charlieintel.com/wp-content/uploads/2021/06/10122756/cold-war-warzone-season-4.jpg" alt="">
+                <p class="game-title white-text">1. call of duty: warzone</p>
+            </div>
+
+            <div class="col s12 m6 l4 game-tile">
+                <img class="game-img" src="https://ph-live-01.slatic.net/p/4c96b845db6fe5e1b64335b0d9f69790.png" alt="">
+                <p class="game-title white-text">2. minecraft</p>
+            </div>
+
+            <div class="col s12 m6 l4 game-tile">
+                <img class="game-img" src="https://staticg.sportskeeda.com/editor/2021/07/ca79c-16269473365552-800.jpg" alt="">
+                <p class="game-title white-text">3. animal crossing: new horizon</p>
+            </div>
+
+            <div class="col s12 m6 l4 game-tile">
+                <img class="game-img" src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2014/11/GTA-5-1.jpg" alt="">
+                <p class="game-title white-text">4. grand theft auto v</p>
+            </div>
+
+            <div class="col s12 m6 l4 game-tile">
+                <img class="game-img" src="https://cdn1.dotesports.com/wp-content/uploads/2019/09/12195522/league-of-legends.jpg" alt="">
+                <p class="game-title white-text">5. league of legends</p>
+            </div>
+
+            <div class="col s12 m6 l4 game-tile">
+                <img class="game-img" src="https://www.theicon.com/wp-content/uploads/2021/05/valorant-logo-characters-red-pink-PC.jpg" alt="">
+                <p class="game-title white-text">6. valorant</p>
+            </div>
+
+            <div class="col s12 m6 l4 game-tile">
+                <img class="game-img" src="https://static.bhphotovideo.com/explora/sites/default/files/styles/top_shot/public/ts-apex-legends-free-to-play-battle-royale_0.jpg?itok=mISX6TSE" alt="">
+                <p class="game-title white-text">7. apex legends</p>
+            </div>
+
+            <div class="col s12 m6 l4 game-tile">
+                <img class="game-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhUvB75XlgiB1FlY6DSMkILKVJTomgcJwpWwklM7F9kcmPppbDmKKjHawKHil1fYChWKc&usqp=CAU" alt="">
+                <p class="game-title white-text">8. fortnite</p>
+            </div>
+
+            <div class="col s12 m6 l4 game-tile">
+                <img class="game-img" src="https://www.futuregamereleases.com/wp-content/uploads/2020/09/Assassins-Creed-Valhalla-release-date-october.jpg" alt="">
+                <p class="game-title white-text">9. assassin's creed valhalla</p>
+            </div>
         </div>
 
 
         <!-- game tiles -->
 
-    <div class="row center-align">
-        <button class="btn waves-effect red darken-3 more-games-btn" type="submit" name="action">
-            More Games
-            <i class="material-icons right">send</i>
-        </button>
+        <div class="row center-align">
+            <a href="{{ url_for('get_games') }}" class="btn waves-effect red darken-3 more-games-btn" type="submit" name="action">
+                More Games
+                <i class="material-icons right">send</i>
+            </a>
+        </div>
     </div>
-
 
 {% endblock %}
