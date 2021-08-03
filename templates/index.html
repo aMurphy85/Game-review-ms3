@@ -1,123 +1,165 @@
 {% extends "base.html" %}
 {% block home_content %}
     <!-- main image -->
-    <div class="main-image">
-        <img src="https://i.redd.it/m0tjpazeuj611.jpg" alt="">        
-    </div>
-
-    <!-- Information text overlapping image -->
     <div class="row">
-        <div class="col s12 m5 offset-m1 l4 offset-l2 top-left white-text center-align">
-            <h4>Welcome To Game Review</h4>
-            <p class="white-text">
-                THIS SITE IS DESIGNED FOR PEOPLE WHO LOVE PLAYING
-                VIDEOGAMES. HERE YOU CAN CHECK OUT THE MOST
-                POPULAR AND ROCOMMENDED GAMES,
-                BY YOU!
-                ARE IN THE WORLD RIGHT NOW!
-            </p>
-            <ul>
-                <li class="white-text">
-                    Sign up today
-                </li>
-                <li class="white-text">
-                    Leave reviews and tips on your favourite games
-                </li>
-                <li class="white-text">
-                    See what other gamers are saying
-                </li>
-                <li class="white-text">
-                    Connect with others
-                </li>
-            </ul>
-            <!-- register button -->
-            <div class="row center-align">
-                <a class="btn waves-effect red darken-3 register-btn" href="{{ url_for('register') }}" type="submit" name="action">
-                    Register
-                    <i class="material-icons right">send</i>
-                </a>
+        <div class="col s12 m12 l10 offset-l1">
+            <div class="card grey darken-4">
+                <div class="slider">
+                    <ul class="slides">
+                        <li>
+                            <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/02/call-of-duty-black-ops-cold-war-trailer-season-2.jpg">
+                            <div class="caption col s12 m10 l8 z-depth-4">
+                                <h5 class="white-text"><strong>Call Of Duty: Warzone</strong></h5>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://tech4gamers.com/wp-content/uploads/2020/04/Assassins-Creed-Valhalla-Screenshots-2-scaled.jpg">
+                            <div class="caption caption-2 col s12 m10 l8 z-depth-4">
+                                <h5 class="black-text"><strong>Assasin's Creed Valhalla</strong></h5>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://planetsmarts.com/wp-content/uploads/2021/03/Fall-Guys-season-4-travels-to-the-future-in-its.jpg">
+                            <div class="caption col s12 m10 l8 z-depth-4">
+                                <h5><strong>Fall Guys: Ultimate Knockout</strong></h5>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://www.indiewire.com/wp-content/uploads/2020/11/MSM_MilesMorales_PS5_AirTrick.png?w=780">
+                            <div class="caption caption-4 col s12 m10 l8 z-depth-4">
+                                <h5 class="white-text"><strong>Spider-Man: Miles Morales</strong></h5>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://venturebeat.com/wp-content/uploads/2018/10/red-dead-8.jpg?w=1200&strip=all">
+                            <div class="caption col s12 m10 l8 z-depth-4">
+                                <h5><strong>Red Dead Redemption 2</strong></h5>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-action white-text">
+                    <h3 class="game-title">Welcome To Game Review</h3>
+                    <p class="site-info white-text">
+                        THIS SITE IS DESIGNED FOR PEOPLE WHO LOVE PLAYING
+                        VIDEOGAMES. HERE YOU CAN CHECK OUT THE MOST
+                        POPULAR AND ROCOMMENDED GAMES,
+                        BY YOU! ARE IN THE WORLD RIGHT NOW!
+                    </p>
+                    <div class="row center-align">
+                        <a class="btn waves-effect red darken-3 register-btn" href="{{ url_for('register') }}" type="submit"
+                          name="action">
+                          Register
+                          <i class="material-icons right">send</i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- game catergory title -->
-    <div class="game-container center-align">
-
-        <h2 class="center-align header">Most popular games</h2>
-
-        <div class="row">
-            <div class="col s12 m6 l4 game-tile">
-                <img class="game-img" src="https://cdn.charlieintel.com/wp-content/uploads/2021/06/10122756/cold-war-warzone-season-4.jpg" alt="">
-                <p class="game-title white-text">1. call of duty: warzone</p>
-            </div>
-
-            <div class="col s12 m6 l4 game-tile">
-                <img class="game-img" src="https://ph-live-01.slatic.net/p/4c96b845db6fe5e1b64335b0d9f69790.png" alt="">
-                <p class="game-title white-text">2. minecraft</p>
-            </div>
-
-            <div class="col s12 m6 l4 game-tile">
-                <img class="game-img" src="https://staticg.sportskeeda.com/editor/2021/07/ca79c-16269473365552-800.jpg" alt="">
-                <p class="game-title white-text">3. animal crossing: new horizon</p>
-            </div>
-
-            <div class="col s12 m6 l4 game-tile">
-                <img class="game-img" src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2014/11/GTA-5-1.jpg" alt="">
-                <p class="game-title white-text">4. grand theft auto v</p>
-            </div>
-
-            <div class="col s12 m6 l4 game-tile">
-                <img class="game-img" src="https://cdn1.dotesports.com/wp-content/uploads/2019/09/12195522/league-of-legends.jpg" alt="">
-                <p class="game-title white-text">5. league of legends</p>
-            </div>
-
-            <div class="col s12 m6 l4 game-tile">
-                <img class="game-img" src="https://www.theicon.com/wp-content/uploads/2021/05/valorant-logo-characters-red-pink-PC.jpg" alt="">
-                <p class="game-title white-text">6. valorant</p>
-            </div>
-
-            <div class="col s12 m6 l4 game-tile">
-                <img class="game-img" src="https://api.cdkeybay.com/static/2209852790ea3ac20b4a7c58.jpg" alt="">
-                <p class="game-title white-text">7. genshin impact</p>
-            </div>
-
-            <div class="col s12 m6 l4 game-tile">
-                <img class="game-img" src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/clans/36805194/4dc4076d2fa3e464d35767ac154df11d3df7b302.jpg" alt="">
-                <p class="game-title white-text">8. outriders</p>
-            </div>
-
-            <div class="col s12 m6 l4 game-tile">
-                <img class="game-img" src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/capsule_616x353.jpg?t=1617258628" alt="">
-                <p class="game-title white-text">9. valheim</p>
-            </div>
-
-            <div class="col s12 m6 l4 game-tile">
-                <img class="game-img" src="https://static.bhphotovideo.com/explora/sites/default/files/styles/top_shot/public/ts-apex-legends-free-to-play-battle-royale_0.jpg?itok=mISX6TSE" alt="">
-                <p class="game-title white-text">10. apex legends</p>
-            </div>
-
-            <div class="col s12 m6 l4 game-tile">
-                <img class="game-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhUvB75XlgiB1FlY6DSMkILKVJTomgcJwpWwklM7F9kcmPppbDmKKjHawKHil1fYChWKc&usqp=CAU" alt="">
-                <p class="game-title white-text">11. fortnite</p>
-            </div>
-
-            <div class="col s12 m6 l4 game-tile">
-                <img class="game-img" src="https://www.futuregamereleases.com/wp-content/uploads/2020/09/Assassins-Creed-Valhalla-release-date-october.jpg" alt="">
-                <p class="game-title white-text">12. assassin's creed valhalla</p>
-            </div>
-        </div>
-        
-
-
-
-        <!-- game tiles -->
-
-        <div class="row center-align">
-            <a href="{{ url_for('get_games') }}" class="btn waves-effect red darken-3 more-games-btn" type="submit" name="action">
-                More Games
-                <i class="material-icons right">send</i>
-            </a>
+    <div class="row">
+        <div class="col s12 m10 l10 offset-l1 offset-m1">
+            <h4 class="header white-text">Most Popular Games</h4>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col s12 m10 l10 offset-l1 offset-m1">
+          
+            <div class="col s12 m6 l4">
+                <div class="card grey darken-4">
+                    <div class="card-image">
+                        <img src="https://cdn1.dotesports.com/wp-content/uploads/2021/06/14121316/codwz25.jpg">
+                    </div>
+                    <div class="card-content white-text">
+                        <h2 class="blue-grey-text darken-4">#1</h2>
+                        <p>
+                          Call Of Duty: Warzone
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div class="card grey darken-4">
+                    <div class="card-image">
+                        <img src="https://ph-live-01.slatic.net/p/4c96b845db6fe5e1b64335b0d9f69790.png" alt="game image">
+                    </div>
+                    <div class="card-content white-text">
+                        <h2 class="blue-grey-text darken-4">#2</h2>
+                        <p>
+                          Minecraft
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div class="card grey darken-4">
+                    <div class="card-image">
+                        <img src="https://staticg.sportskeeda.com/editor/2021/07/ca79c-16269473365552-800.jpg">
+                    </div>
+                    <div class="card-content white-text">
+                        <h2 class="blue-grey-text darken-4">#3</h2>
+                        <p>
+                          Animal Crossing New Horizon
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div class="card grey darken-4">
+                    <div class="card-image">
+                        <img src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2014/11/GTA-5-1.jpg">
+                    </div>
+                    <div class="card-content white-text">
+                        <h2 class="blue-grey-text darken-4">#4</h2>
+                        <p>
+                          Grand Theft Auto V
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div class="card grey darken-4">
+                    <div class="card-image">
+                        <img src="https://cdn1.dotesports.com/wp-content/uploads/2019/09/12195522/league-of-legends.jpg">
+                    </div>
+                    <div class="card-content white-text">
+                        <h2 class="blue-grey-text darken-4">#5</h2>
+                        <p>
+                          League Of Legends
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div class="card grey darken-4">
+                    <div class="card-image">
+                        <img src="https://www.theicon.com/wp-content/uploads/2021/05/valorant-logo-characters-red-pink-PC.jpg">
+                    </div>
+                    <div class="card-content white-text">
+                        <h2 class="blue-grey-text darken-4">#6</h2>
+                        <p>
+                          Valorant
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row center-align">
+        <a href="{{ url_for('get_games') }}" class="btn waves-effect red darken-3 more-games-btn" type="submit" name="action">
+            More Games
+            <i class="material-icons right">send</i>
+        </a>
+  </div>
+
 
 {% endblock %}

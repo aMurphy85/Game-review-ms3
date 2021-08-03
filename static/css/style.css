@@ -15,52 +15,92 @@ nav {
     border-bottom: 1px solid #fafafa;
 }
 
-.main-image {
-    position: relative;
-    width:80%;
-    height:500px;
-    margin: auto;
-    text-align: center;
+.card 
+.card-action {
+    padding: 5px;
 }
 
-img {
-    width:100%;
-    height:100%;
+.slider 
+.slides 
+li 
+.caption {
+    top: 82%;
+    left: 5%;
 }
 
-.top-left {
-    position: absolute;
-    top: 100px;    
+.slider 
+.slides 
+li
+.caption-2 {
+    top: 3%;
+    left: 5%;
 }
 
-.register-btn {
-    margin: 20px;
+.slider 
+.slides 
+li
+.caption-4 {
+    top: 1%;
+    left: 45%;
+}
+
+h5 {
+    margin: 5px;
+}
+
+h3 {
+    margin: 10px;
+}
+
+p {
+    margin: 10px;
 }
 
 .row {
     margin-bottom: 0;
 }
 
+.register-btn {
+    margin: 10px;
+}
+
 .header {
-    color: rgba(83, 82, 82, 1);
-    margin: 40px;
-    letter-spacing: 3px;
+    margin: 10px;
 }
 
 .game-container {
     margin: auto;
     text-align: center;
-    width: 80%;
 }
 
-.game-img {
-    height: 180px;
-    border-radius: 30px;
-    padding: 0;
+.row 
+.col {
+    padding: 3px;
 }
 
-p {
-    margin: 10px 0 30px 3px;
+.card 
+.card-image 
+img {
+    padding: 5px;
+}
+
+.card {
+    margin: 0;
+}
+
+.card
+.card-content {
+    padding: 5px;
+}
+
+h2 {
+    margin: 0;
+}
+
+.card 
+.card-image 
+img {
+    height: 200px;
 }
 
 .more-games-btn {

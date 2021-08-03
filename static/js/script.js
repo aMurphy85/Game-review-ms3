@@ -1,6 +1,8 @@
 $(document).ready(function(){
   $('.sidenav').sidenav({edge: "right"});
-});
-$(document).ready(function(){
-  $('.modal').modal();
+  $('.slider').slider( {
+    'indicators': false,
+    'height': 500,
+  }
+  );
 });
