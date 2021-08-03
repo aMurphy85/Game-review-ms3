@@ -42,7 +42,7 @@
             <li><a class="white-text" href="{{ url_for('home') }}">Home</a></li>
             <li><a class="white-text" href="{{ url_for('get_games') }}">Games</a></li>
             {% if session.user %}
-                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    <li><a class="white-text" href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
                 <li><a class="white-text" href="{{ url_for('login') }}">Log In</a></li>
                 <li><a class="white-text" href="{{ url_for('register') }}">Register</a></li>
@@ -56,7 +56,9 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes">
-                        <h4 class="red darken-3 white-text center-align">{{ message }}</h4>
+                        <div class="col s12 m10 l10 offset-l1 offset-m1">
+                            <h4 class="red darken-3 white-text center-align">{{ message }}</h4>
+                        </div>                        
                     </div>
                 {% endfor %}
             {% endif %}
