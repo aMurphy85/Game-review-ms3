@@ -86,8 +86,14 @@ def logout():
 
 @app.route("/get_games")
 def get_games():
-    games = mongo.db.games.find()
+    games = list(mongo.db.games.find())
     return render_template("games.html", games=games)
+
+
+@app.route("/game/<game_id>", methods=["GET", "POST"])
+def game(game_id):
+    game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
+    return render_template("game_card.html", game=game)
 
 
 if __name__ == "__main__":

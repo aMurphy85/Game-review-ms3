@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+        
+<div class="row">
+    <div class="col s12 m10 l8 offset-l2 offset-m1" id="card">
+        <div class="card game-card grey darken-4">
+            <div class="card-image">
+                <img id="card-image" src="{{ game.game_url }}">
+            </div>
+            <div class="card-content white-text">
+                <div class="row center-align">
+                    <h3>{{ game.game_title }}</h3>
+                </div>
+            <div class="card-action">
+                <a href="#">This is a link</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
