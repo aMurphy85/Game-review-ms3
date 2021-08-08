@@ -117,34 +117,26 @@ img {
     padding: 10px;
 }
 
+.game-info {
+    margin: 15px 0 15px 0;
+}
+
+.btn-container
+a {
+    margin: 15px;
+}
+
 /* media queries */
 
 @media (max-width: 992px) {
-    .main-image {
-        width: 100%;
-        height: 450px;
-    }
 
-    .top-left {
-        top: 80px;
-    }
 }
 
-@media (max-width: 576px) {
-    .main-image {
-        position: static;
-        width: 100%;
-        height: 375px;
-    }
-
-    .top-left {
-        border-bottom: 1px solid #fafafa;
-        border-top: 1px solid #fafafa;
-        position: static;
-    }
-
-    .header {
-        margin: 25px;
-        letter-spacing: 2px;
+@media (max-width: 576px) { 
+    .slider {
+        height:370px !important;
+    }   
+    .slides {
+        height:370px !important;
     }
 }
