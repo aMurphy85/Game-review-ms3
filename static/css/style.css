@@ -65,7 +65,7 @@ p {
 }
 
 .header {
-    margin: 10px;
+    margin: 20px;
 }
 
 .game-container {
@@ -104,7 +104,7 @@ img {
 }
 
 .more-games-btn {
-    margin: 40px;
+    margin-top: 40px;
 }
 
 .game-card {
@@ -126,6 +126,15 @@ a {
     margin: 15px;
 }
 
+.page-footer {
+    border-top: solid 1px #fafafa;
+    margin-top: 40px;
+}
+
+#links {
+    text-align: end;
+}
+
 /* media queries */
 
 @media (max-width: 992px) {
@@ -138,5 +147,12 @@ a {
     }   
     .slides {
         height:370px !important;
+    }
+    #card-image {
+        height: 300px;
+        padding: 10px;
+    }
+    #links {
+        text-align: left;
     }
 }
