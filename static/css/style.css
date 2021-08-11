@@ -98,6 +98,10 @@ img {
     border: 1px solid #fafafa;
 }
 
+#card-panel {
+    margin-bottom: 50px;
+}
+
 .card
 .card-content {
     padding: 5px;
@@ -142,10 +146,6 @@ a {
 
 .back-btn {
     margin: 40px;
-}
-
-.switch {
-    margin: 15px;
 }
 
 #footer {

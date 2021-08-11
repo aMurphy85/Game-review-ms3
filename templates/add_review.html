@@ -9,34 +9,39 @@
 
 <div class="row">
     <div class="col s12 m10 l8 offset-l2 offset-m1">
-        <div class="card-panel grey darken-4">
+        <div class="card-panel grey darken-4" id="card-panel">
 
             <div class="row">
-                <form class="col s12 m10 l10 offset-m1 offset-l1">
+                <form class="col s12 m10 l10 offset-m1 offset-l1" method="POST" action="">
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix white-text">account_circle</i>
-                            <input id="icon_prefix" type="text" class="validate">
-                            <label class="white-text" for="icon_prefix">Name</label>
+                            <input id="user_name" name="user_name" minlength="5" maxlength="20" 
+                                type="text" class="validate" required>
+                            <label class="white-text" for="user_name">Username</label>
                         </div>                       
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix white-text">mode_edit</i>
-                            <textarea id="textarea1" class="materialize-textarea"></textarea>
-                            <label class="white-text" for="textarea1">Textarea</label>
+                            <textarea id="user_review" name="user_review" minlength="5"
+                                maxlength="200" class="materialize-textarea validate" required></textarea>
+                            <label class="white-text" for="user_review">Review</label>
                         </div>
                     </div>
 
                     <!-- Switch -->
-                    <div class="switch center-align">
-                        <p class="white-text"><strong>Recommend this game?</strong></p>
-                        <label class="white-text">
-                             No
-                            <input type="checkbox">
-                            <span class="lever"></span>
-                                Yes
-                        </label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <div class="switch center-align">
+                                <p class="white-text"><strong>Recommend this game?</strong></p>
+                                <label class="white-text" for="is_recommended">
+                                    <input type="checkbox" id="is_recommended" name="is_recommended">
+                                    <span class="lever"></span>
+                                    Yes
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
