@@ -15,94 +15,94 @@
 </head>
 <body>
 
-    <header>
-        <!-- top navbar -->
-        <div class="navbar-fixed">
-            <nav class="nav-extended black">
-            <div class="nav-wrapper">
-              <a href="{{ url_for('home') }}" class="brand-logo left">Game Review</a>
-              <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="large material-icons">menu</i></a>
-              <ul class="right hide-on-med-and-down">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('get_games') }}">Games</a></li>
+        <header>
+            <!-- top navbar -->
+            <div class="navbar-fixed">
+                <nav class="nav-extended black">
+                <div class="nav-wrapper">
+                  <a href="{{ url_for('home') }}" class="brand-logo left">Game Review</a>
+                  <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="large material-icons">menu</i></a>
+                  <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('get_games') }}">Games</a></li>
+                    {% if session.user %}
+                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('login') }}">Log In</a></li>
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                    {% endif %} 
+                  </ul>
+                </div>
+              </nav>
+            </div>
+
+              <!-- mobile sidenav  -->
+              <ul class="sidenav grey darken-3" id="mobile-demo">
+                <li><h4 class="center-align white-text">Game Review</h4></li>
+                <li><a class="white-text" href="{{ url_for('home') }}">Home</a></li>
+                <li><a class="white-text" href="{{ url_for('get_games') }}">Games</a></li>
                 {% if session.user %}
-                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                        <li><a class="white-text" href="{{ url_for('logout') }}">Log Out</a></li>
                 {% else %}
-                    <li><a href="{{ url_for('login') }}">Log In</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
-                {% endif %} 
+                    <li><a class="white-text" href="{{ url_for('login') }}">Log In</a></li>
+                    <li><a class="white-text" href="{{ url_for('register') }}">Register</a></li>
+                {% endif %}
               </ul>
-            </div>
-          </nav>
-        </div>
-        
-          <!-- mobile sidenav  -->
-          <ul class="sidenav grey darken-3" id="mobile-demo">
-            <li><h4 class="center-align white-text">Game Review</h4></li>
-            <li><a class="white-text" href="{{ url_for('home') }}">Home</a></li>
-            <li><a class="white-text" href="{{ url_for('get_games') }}">Games</a></li>
-            {% if session.user %}
-                    <li><a class="white-text" href="{{ url_for('logout') }}">Log Out</a></li>
-            {% else %}
-                <li><a class="white-text" href="{{ url_for('login') }}">Log In</a></li>
-                <li><a class="white-text" href="{{ url_for('register') }}">Register</a></li>
-            {% endif %}
-          </ul>
-    </header>
+        </header>
 
-    <section>
-        <!-- flash messages -->
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="row flashes">
-                        <div class="col s12 m10 l8 offset-l2 offset-m1">
-                            <h4 class="red darken-3 white-text center-align">{{ message }}</h4>
-                        </div>                        
+        <section>
+            <!-- flash messages -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="row flashes">
+                            <div class="col s12 m10 l8 offset-l2 offset-m1">
+                                <h4 class="red darken-3 white-text center-align">{{ message }}</h4>
+                            </div>                        
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </section>
+
+        <!-- main content-->
+        <main>
+            {% block home_content %}
+            {% endblock %}
+
+            {% block content %}
+            {% endblock %}
+
+        </main>
+
+        <!-- foter -->
+        <footer class="page-footer red darken-3" id="footer">
+            <div class="row">
+                <div class="col s12 m10 l10 offset-l1 offset-m1">
+                    <div class="col s12 m6 l4">
+                        <h5 class="white-text">Contact</h5>
+                        <p class="grey-text text-lighten-4">contact@gamereview.net</p>
                     </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-    </section>
-
-    <!-- main content-->
-    <main>
-        {% block home_content %}
-        {% endblock %}
-
-        {% block content %}
-        {% endblock %}
-
-    </main>
-
-    <!-- foter -->
-    <footer class="page-footer red darken-3">
-        <div class="row">
-            <div class="col s12 m10 l10 offset-l1 offset-m1">
-                <div class="col s12 m6 l4">
-                    <h5 class="white-text">Contact</h5>
-                    <p class="grey-text text-lighten-4">contact@gamereview.net</p>
-                </div>
-                <div class="col s12 m6 l4"></div>
-                <div class="col s12 m6 l4">
-                    <div class="col s12">
-                        <h5 class="white-text" id="links">Links</h5>
-                    </div>
-                    <div class="col s12" id="links">
-                        <a class="grey-text text-lighten-3" href="#!"><i class="material-icons">add</i></a>
-                        <a class="grey-text text-lighten-3" href="#!"><i class="material-icons">add</i></a>
-                        <a class="grey-text text-lighten-3" href="#!"><i class="material-icons">add</i></a>
-                        <a class="grey-text text-lighten-3" href="#!"><i class="material-icons">add</i></a>
+                    <div class="col s12 m6 l4"></div>
+                    <div class="col s12 m6 l4">
+                        <div class="col s12">
+                            <h5 class="white-text" id="links">Links</h5>
+                        </div>
+                        <div class="col s12" id="links">
+                            <a class="grey-text text-lighten-3" href="#!"><i class="material-icons">add</i></a>
+                            <a class="grey-text text-lighten-3" href="#!"><i class="material-icons">add</i></a>
+                            <a class="grey-text text-lighten-3" href="#!"><i class="material-icons">add</i></a>
+                            <a class="grey-text text-lighten-3" href="#!"><i class="material-icons">add</i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-copyright center-align">
-            <div class="container">
-                © 2014 Copyright Text
+            <div class="footer-copyright center-align">
+                <div class="container">
+                    © 2014 Copyright Text
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
