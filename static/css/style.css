@@ -95,12 +95,10 @@ img {
 }
 
 .card-panel {
-    border: 1px solid #fafafa;
+    padding: 15px;
 }
 
-#card-panel {
-    margin-bottom: 50px;
-}
+
 
 .card
 .card-content {
@@ -148,6 +146,14 @@ a {
     margin: 40px;
 }
 
+.submit-btn {
+    margin: 15px 0 15px 0;
+}
+
+.modal {
+    border: 1px solid #fafafa;
+}
+
 #footer {
     position: absolute;
     bottom: 0;
@@ -181,6 +187,10 @@ a {
     #card-image {
         height: 300px;
         padding: 10px;
+    }
+    .modal {
+        margin: auto !important;
+        width: 90%;
     }
     #links {
         text-align: left;

@@ -5,4 +5,5 @@ $(document).ready(function(){
     'height': 500,
   }
   );
+  $('.modal').modal();
 });

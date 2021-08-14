@@ -1,53 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row">
-    <div class="col s12 m10 l8 offset-l2 offset-m1">
-        <h4 class="header white-text">Add review</h4>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col s12 m10 l8 offset-l2 offset-m1">
-        <div class="card-panel grey darken-4" id="card-panel">
-
-            <div class="row">
-                <form class="col s12 m10 l10 offset-m1 offset-l1" method="POST" action="">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix white-text">account_circle</i>
-                            <input id="user_name" name="user_name" minlength="5" maxlength="20" 
-                                type="text" class="validate" required>
-                            <label class="white-text" for="user_name">Username</label>
-                        </div>                       
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix white-text">mode_edit</i>
-                            <textarea id="user_review" name="user_review" minlength="5"
-                                maxlength="200" class="materialize-textarea validate" required></textarea>
-                            <label class="white-text" for="user_review">Review</label>
-                        </div>
-                    </div>
-
-                    <!-- Switch -->
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <div class="switch center-align">
-                                <p class="white-text"><strong>Recommend this game?</strong></p>
-                                <label class="white-text" for="is_recommended">
-                                    <input type="checkbox" id="is_recommended" name="is_recommended">
-                                    <span class="lever"></span>
-                                    Yes
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
+    <div class="row">
+        <div class="col s12 m10 l8 offset-l2 offset-m1">
+            <h4 class="header white-text">Add review</h4>
         </div>
     </div>
-</div>
+
+
+    <div class="row">
+        <form class="col s12 m10 l8 offset-m1 offset-l2" method="POST" action="{{ url_for('login') }}">
+            <div class="card-panel grey darken-4">
+                <!-- username input -->
+                <div class="row">
+                    <div class="input-field col s10 m8 l8 offset-s1 offset-m2 offset-l2">                                            
+                        <textarea id="user_review" name="user_review" minlength="5"
+                            maxlength="200" class="materialize-textarea white-text validate" required></textarea>
+                        <label class="white-text" for="user_review">Review</label>
+                    </div>
+                </div>
+                <!-- Switch -->
+                <div class="row">
+                    <div class="input-field col s12 center-align">
+                        <div class="switch">
+                            <p class="white-text"><strong>Recommend this game?</strong></p>
+                            <label class="white-text" for="is_recommended">
+                                <input type="checkbox" id="is_recommended" name="is_recommended">
+                                <span class="lever"></span>
+                                Yes
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- submit button -->
+                <div class="row center-align">
+                    <button class="btn waves-effect red darken-3" type="submit">
+                        Submit review
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </div>
+        </from>
+    </div>
 
 {% endblock %}
