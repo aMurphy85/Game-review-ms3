@@ -68,7 +68,58 @@
                 
                 <div class="row">
                     <div class="col s12 center-align">
-                        <a class="waves-effect waves-light btn modal-trigger" href="{{ url_for('add_review') }}">Leave a review</a>
+                        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Leave a review</a>
+                    </div>
+                </div>
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal col m10 l8 grey darken-4">
+                    <div class="modal-content grey darken-4" id="card-panel">
+
+                        <div class="container center-align">
+                            <h4 class="white-text">Add review</h4>
+                        </div>
+
+                        <div class="col s12 m8 l6 offset-m2 offset-l3 card-image" id="modal-img">
+                            <img src="{{ game.game_url }}">
+                        </div>
+
+                        <form  method="POST" action="{{ url_for('add_review') }}">
+                            <div class="row">
+                                <input type="hidden" value="{{ game.game_title }}" name="game_title" />
+                                <div class="input-field col s10 m8 l8 offset-s1 offset-m2 offset-l2">                                            
+                                    <textarea id="user_review" name="user_review" minlength="5"
+                                        maxlength="200" class="materialize-textarea white-text validate" required></textarea>
+                                    <label class="white-text" for="user_review">Review</label>
+                                </div>
+                            </div>
+                
+                            <!-- Switch -->
+                            <div class="row">
+                                <div class="input-field col s12 center-align">
+                                    <div class="switch">
+                                        <p class="white-text"><strong>Recommend this game?</strong></p>
+                                        <label class="white-text" for="is_recommended">
+                                            <input type="checkbox" id="is_recommended" name="is_recommended">
+                                            <span class="lever"></span>
+                                            Yes
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 center-align">
+                                    <button class="btn waves-effect red darken-3 submit-btn" type="submit">
+                                        Submit Review
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="modal-footer grey darken-4">
+                            <a href="#!" class="modal-close white-text">Close</a>
+                          </div>
+
                     </div>
                 </div>
             </div>
@@ -86,9 +137,12 @@
 <div class="row">
     <div class="col s12 m10 l8 offset-l2 offset-m1">        
         <div class="card game-card grey darken-4">
-            <div class="card-content white-text">
-                <p></p>
-            </div>
+            {% for review in reviews %}
+                <div class="card-content white-text">
+                    <p>{{ review.user_review }}</p>
+                    <p>{{ review.created_by }}</p>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </div>

@@ -7,7 +7,6 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
-import random
 
 
 app = Flask(__name__)
@@ -38,7 +37,8 @@ def register():
 
         register = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get(
+                "password"))
         }
         mongo.db.users.insert_one(register)
 
@@ -58,11 +58,11 @@ def login():
         if existing_user:
             # confirm hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
-                    return redirect(url_for(
-                            "get_games", username=session["user"]))
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for(
+                    "get_games", username=session["user"]))
             else:
                 # invalid password match
                 flash("Invalid Username and/or Password")
@@ -93,12 +93,27 @@ def get_games():
 @app.route("/game/<game_id>", methods=["GET", "POST"])
 def game(game_id):
     game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
-    return render_template("game_card.html", game=game)
+    reviews = mongo.db.reviews.find(
+        {"game_reference": game['game_title']})
+    return render_template("game_card.html", game=game, reviews=reviews)
 
 
-@app.route("/add_review")
+@app.route("/add_review", methods=["GET", "POST"])
 def add_review():
-    return render_template("add_review.html")
+    if request.method == "POST":
+        is_recommended = "on" if request.form.get("is_recommended") else "off"
+        review = {
+            "game_reference": request.form.get("game_title"),
+            "user_review": request.form.get("user_review"),
+            "is_recommended": is_recommended,
+            "created_by": session["user"]
+        }
+        mongo.db.reviews.insert_one(review)
+        flash("Review Successfully Added")
+        return redirect(url_for("get_games"))
+
+    game = mongo.db.games.find().sort("game_title", 1)
+    return render_template("game_card.html", game=game)
 
 
 if __name__ == "__main__":
