@@ -171,6 +171,11 @@ a {
     border: 1px solid #fafafa;
 }
 
+.datepicker-modal {
+    color: #000;
+    width: 100%;
+}
+
 .fas {
     margin: 0 5px 0 5px;
 }
