@@ -15,6 +15,10 @@ nav {
     border-bottom: 1px solid #fafafa;
 }
 
+.nav-icon {
+    font-size: x-large;
+}
+
 .brand-logo {
     margin: 0 0 0 20px;
 }
@@ -165,6 +169,10 @@ a {
 
 .modal {
     border: 1px solid #fafafa;
+}
+
+.fas {
+    margin: 0 5px 0 5px;
 }
 
 #footer {
