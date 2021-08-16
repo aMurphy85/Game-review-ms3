@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" 
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
@@ -20,7 +21,10 @@
             <div class="navbar-fixed">
                 <nav class="nav-extended black">
                 <div class="nav-wrapper">
-                  <a href="{{ url_for('home') }}" class="brand-logo left">Game Review</a>
+                  <a href="{{ url_for('home') }}" class="brand-logo left">
+                      <p class="title-1">Game</p>
+                      <p class="title-2 red-text darken-3">Review</p> 
+                  </a>
                   <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="large material-icons">menu</i></a>
                   <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -76,30 +80,34 @@
         </main>
 
         <!-- foter -->
-        <footer class="page-footer red darken-3" id="footer">
+        <footer class="red darken-3" id="footer">
             <div class="row">
-                <div class="col s12 m10 l10 offset-l1 offset-m1">
-                    <div class="col s12 m6 l4">
-                        <h5 class="white-text">Contact</h5>
-                        <p class="grey-text text-lighten-4">contact@gamereview.net</p>
-                    </div>
-                    <div class="col s12 m6 l4"></div>
-                    <div class="col s12 m6 l4">
-                        <div class="col s12">
-                            <h5 class="white-text" id="links">Links</h5>
-                        </div>
-                        <div class="col s12" id="links">
-                            <a class="grey-text text-lighten-3" href="#!"><i class="material-icons">add</i></a>
-                            <a class="grey-text text-lighten-3" href="#!"><i class="material-icons">add</i></a>
-                            <a class="grey-text text-lighten-3" href="#!"><i class="material-icons">add</i></a>
-                            <a class="grey-text text-lighten-3" href="#!"><i class="material-icons">add</i></a>
-                        </div>
+                <div class="col s12 center-align" id="footer-1">
+                    <h5 class="white-text">Contact Us</h5>
+                    <p class="white-text">contact@gamereview.net</p>
+                </div>
+                <div class="row">
+                    <div class="col s12 center-align" id="footer-2">
+                        <h5 class="white-text">Links</h5>
+                        <a class="link-1 white-text" href="">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a class="link-2 white-text" href="">
+                            <i class="fab fa-twitch"></i>
+                        </a>
+                        <a class="link-3 white-text" href="">
+                            <i class="fab fa-steam"></i>
+                        </a>
+                        <a class="link-4 white-text" href="">
+                            <i class="fab fa-facebook"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="footer-copyright center-align">
-                <div class="container">
-                    © 2014 Copyright Text
+
+                <div class="row red darken-2">
+                    <div class="col s12 center-align">
+                        <p class="copyright white-text"><small>Copyright <span>&#169;</span> A_MURPHY web designs</small> </p>
+                    </div>
                 </div>
             </div>
         </footer>
