@@ -10,14 +10,14 @@
 
             <div class="card-content white-text">
                 <div class="row ">                    
-                        <div class="col s10 m10 l10 offset-s1 offset-m1 offset-l1">
-                            <h3>{{ game.game_title }}</h3>
-                        </div>
+                    <div class="col s10 m10 l10 offset-s1 offset-m1 offset-l1">
+                        <h3>{{ game.game_title }}</h3>
+                    </div>
                 </div>
 
                 <div class="row game-info">
                     <div class="col s10 m10 l10 offset-s1 offset-m1 offset-l1">
-                        <h5>Game play description:</h5>
+                        <h5 class="h5">Game play description:</h5>
                         <p>
                             {{ game.game_description }}
                         </p>
@@ -169,6 +169,7 @@
     </div>
 </div>
 
+<!-- reviews -->
 <div class="row">
     <div class="col s12 m10 l8 offset-l2 offset-m1">
         <h4 class="header white-text">Reviews</h4>
@@ -176,12 +177,32 @@
 </div>
 
 <div class="row">
-    <div class="col s12 m10 l8 offset-l2 offset-m1">        
-        <div class="card game-card grey darken-4">
+    <div class="col s12 m10 l8 offset-l2 offset-m1" id="card">
+        <div class="card review-card grey darken-4">
             {% for review in reviews %}
-                <div class="card-content white-text">
-                    <p>{{ review.user_review }}</p>
-                    <p>{{ review.created_by }}</p>
+                <div class="card-content">
+                    <div class="row" id="card-content">
+                        <div class="col s4 m2 l2 offset-m1 offset-l1">
+                            <h5 class="review-name spacer white-text">{{ review.created_by }}</h5>                            
+                            <p class="spacer white-text"><small>Posted:</small></p>
+                            <p class="spacer white-text"><strong>{{ review.date }}</strong></p>
+                        </div>
+                        <div class="col s8 m8 l8" id="review-card">
+                            <p class="spacer white-text"><small>Rated this game:</small></p>
+                            <p class="spacer white-text"><i class="review-fas fas fa-star"></i>
+                                <strong>{{ review.star_rating }}</strong>
+                                <p class="spacer white-text">
+                                    {{ review.user_review }}
+                                </p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <h4 class="white-text">No reviews submitted</h4>
+                    </div>
                 </div>
             {% endfor %}
         </div>

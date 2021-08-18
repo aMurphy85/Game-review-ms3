@@ -66,7 +66,7 @@ li
     left: 45%;
 }
 
-h5 {
+.h5 {
     margin: 5px;
 }
 
@@ -184,30 +184,73 @@ a {
     margin: 0 5px 0 5px;
 }
 
+.review-fas {
+    margin: 0;
+}
+
+.fa-star {
+    color: #ffea00;
+}
+
 /* star rating code from https://codepen.io/eridesigns/pen/xOjkqA*/
   
-  /* hiding the radio buttons */
-  input[type="radio"] {
-    display:none;
-  }
-  
-  input[type="radio"]:checked ~ label {
-    color:orange;
-  }
-  
-.star-label {
-    color: grey;
-    font-size: 45px;
-    padding: 5px;
-  }
-  
-  label:hover, label:hover ~ label {color:orange;}
-  
-  .rating {
-    direction:rtl;
-    unicode-bidi: bidi-override;
-  }
+/* hiding the radio buttons */
+input[type="radio"] {
+  display:none;
+}
 
+input[type="radio"]:checked ~ label {
+  color:orange;
+}
+
+.star-label {
+  color: grey;
+  font-size: 45px;
+  padding: 5px;
+}
+
+label:hover, label:hover ~ label {color:orange;}
+
+.rating {
+  direction:rtl;
+  unicode-bidi: bidi-override;
+}
+
+/* reviews */
+.review-card {
+    margin: 30px;
+    padding: 15px 0 15px 0;
+    border: 1px solid #fafafa;
+}
+
+#review-card {
+    border-left: 1px solid #fafafa;
+    height: 100%;
+    padding-left: 15px;
+}
+
+#card-content {
+    border-bottom: 1px solid #fafafa;
+    margin: 15px;
+    padding: 0 0 20px 0;
+}
+
+.review-name {
+    margin-top: 5px;
+}
+
+.review-card {
+    margin: 0;
+    border: 1px solid #fafafa;
+}
+
+.review-card 
+.card-content
+p {
+    margin: 5px;
+}
+
+/* footer */
 #footer {
     border-top: 1px solid #fafafa;
     margin-top: 40px;
@@ -285,7 +328,7 @@ a {
         height:370px !important;
     }
     #card-image {
-        height: 300px;
+        height: 270px;
         padding: 10px;
     }
     .modal {

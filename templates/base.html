@@ -42,7 +42,10 @@
 
               <!-- mobile sidenav  -->
               <ul class="sidenav grey darken-3" id="mobile-demo">
-                <li><h4 class="center-align white-text">Game Review</h4></li>
+                <li class="center-align">
+                    <h4 class="title-1 white-text">Game</h4>
+                    <h4 class="title-2 red-text darken-3">Review</h4>
+                </li>
                 <li><a class="white-text" href="{{ url_for('home') }}">Home</a></li>
                 <li><a class="white-text" href="{{ url_for('get_games') }}">Games</a></li>
                 {% if session.user %}
