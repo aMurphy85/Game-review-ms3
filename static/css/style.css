@@ -115,8 +115,6 @@ img {
     padding: 15px;
 }
 
-
-
 .card
 .card-content {
     padding: 5px;
@@ -163,12 +161,13 @@ a {
     margin: 40px;
 }
 
-.submit-btn {
-    margin: 15px 0 15px 0;
-}
-
+/* modal styling */
 .modal {
     border: 1px solid #fafafa;
+}
+
+.input-field {
+    margin: 10px;
 }
 
 .datepicker-modal {
@@ -176,9 +175,38 @@ a {
     width: 100%;
 }
 
+.submit-btn {
+    margin: 25px 0 15px 0;
+}
+
+/* icons */
 .fas {
     margin: 0 5px 0 5px;
 }
+
+/* star rating code from https://codepen.io/eridesigns/pen/xOjkqA*/
+  
+  /* hiding the radio buttons */
+  input[type="radio"] {
+    display:none;
+  }
+  
+  input[type="radio"]:checked ~ label {
+    color:orange;
+  }
+  
+.star-label {
+    color: grey;
+    font-size: 45px;
+    padding: 5px;
+  }
+  
+  label:hover, label:hover ~ label {color:orange;}
+  
+  .rating {
+    direction:rtl;
+    unicode-bidi: bidi-override;
+  }
 
 #footer {
     border-top: 1px solid #fafafa;
@@ -236,7 +264,7 @@ a {
 /* media queries */
 
 @media (max-width: 992px) {
-
+    
 }
 
 @media (max-width: 576px) { 
@@ -270,4 +298,5 @@ a {
     #footer {
         height: 245px;
     }
+    
 }

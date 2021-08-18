@@ -101,11 +101,11 @@ def game(game_id):
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
     if request.method == "POST":
-        is_recommended = "on" if request.form.get("is_recommended") else "off"
         review = {
             "game_reference": request.form.get("game_title"),
             "user_review": request.form.get("user_review"),
-            "is_recommended": is_recommended,
+            "star_rating": request.form.get("star_rating"),
+            "date": request.form.get("date"),
             "created_by": session["user"]
         }
         mongo.db.reviews.insert_one(review)

@@ -68,7 +68,9 @@
                 
                 <div class="row">
                     <div class="col s12 center-align">
-                        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Leave a review</a>
+                        <a class="waves-effect waves-light btn modal-trigger red darken-4 submit-btn" href="#modal1">
+                            Leave a review <i class="fas fa-pen"></i>
+                        </a>
                     </div>
                 </div>
                 <!-- Modal Structure -->
@@ -83,11 +85,21 @@
                             <img src="{{ game.game_url }}">
                         </div>
 
+                        <!-- review input form -->
                         <form  method="POST" action="{{ url_for('add_review') }}">
+
+                            <!-- review date picker -->
                             <div class="row">
-                                <div class="col s6 m6 l6 offset-s3 offset-m3 offset-l3 center-align">
-                                    <input type="text" class="datepicker">
-                                    <label class="white-text" for="user_review">Date of review</label>
+                                <div class="col s4 offset-s4 center-align">
+                                    <input type="text" class="datepicker white-text center-align" id="date" name="date">
+                                    <label class="white-text" for="date">Date of review</label>
+                                </div>
+                            </div>
+
+                            <!-- review text area -->
+                            <div class="row">
+                                <div class="col s12">
+                                    <p class="white-text center-align"><strong>Review</strong></p>
                                 </div>
                             </div>
 
@@ -96,21 +108,42 @@
                                 <div class="input-field col s10 m8 l8 offset-s1 offset-m2 offset-l2">                                            
                                     <textarea id="user_review" name="user_review" minlength="5"
                                         maxlength="200" class="materialize-textarea white-text validate" required></textarea>
-                                    <label class="white-text" for="user_review">Review</label>
+                                    <label class="white-text" for="user_review"><small>Leave your review here...</small></label>
+                                </div>
+                            </div>                              
+
+                            <!-- star rating code from 
+                                https://gist.github.com/blairanderson/7f9d1c08345c6573e09edaa1f7316fa1-->
+                            <div class="row">
+                                <div class="col s12 center-align">
+                                    <p class="white-text"><strong>Rating</strong></p>
                                 </div>
                             </div>
-                
-                            <!-- Switch -->
+
+                            <div class="row center-align">
+                                
+                                <div class="rating center-align">                                 
+                                    <!-- 5 star rating -->
+                                    <input type="radio" id="radio-btn-1" name="star_rating" value="5 stars">
+                                    <label class="star-label" for="radio-btn-1">&#9733;</label>
+                                    
+                                    <input type="radio" id="radio-btn-2" name="star_rating" value="4 stars">
+                                    <label class="star-label" for="radio-btn-2">&#9733;</label>
+                                    
+                                    <input type="radio" id="radio-btn-3" name="star_rating" value="3 stars">
+                                    <label class="star-label" for="radio-btn-3">&#9733;</label>
+                                    
+                                    <input type="radio" id="radio-btn-4" name="star_rating" value="2 stars">
+                                    <label class="star-label" for="radio-btn-4">&#9733;</label>
+                                    
+                                    <input type="radio" id="radio-btn-5" name="star_rating" value="1 star">
+                                    <label class="star-label" for="radio-btn-5">&#9733;</label>
+                                </div>
+                                                     
+                            </div>
                             <div class="row">
-                                <div class="input-field col s12 center-align">
-                                    <div class="switch">
-                                        <p class="white-text"><strong>Recommend this game?</strong></p>
-                                        <label class="white-text" for="is_recommended">
-                                            <input type="checkbox" id="is_recommended" name="is_recommended">
-                                            <span class="lever"></span>
-                                            Yes
-                                        </label>
-                                    </div>
+                                <div class="col s12 center-align">
+                                    <p><small>(select a star amount)</small></p>
                                 </div>
                             </div>
                             
