@@ -186,8 +186,12 @@ img {
     margin-top: 10px;
 }
 
+#submit-btn {
+    margin: 25px 5px 15px 5px;
+}
+
 #btn {
-    margin: 25px 0 15px 0;
+    margin: 15px 5px 15px 5px;
 }
 
 /* ------------------------------------------------------- icons */
@@ -262,7 +266,11 @@ p {
 }
 
 .btn-small {
-    margin: 3px;
+    margin: 5px;
+}
+
+#fa-calender {
+    margin: 2px;
 }
 
 /* ------------------------------------------------------ footer */
