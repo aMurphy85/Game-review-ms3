@@ -60,17 +60,17 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(request.form.get("username")))
+                flash("Welcome, {}!".format(request.form.get("username")))
                 return redirect(url_for(
                     "get_games", username=session["user"]))
             else:
                 # invalid password match
-                flash("Invalid Username and/or Password")
+                flash("Invalid Username and/or Password!")
                 return redirect(url_for("login"))
 
         else:
             # username doesn't exist
-            flash("Invalid Username and/or Password")
+            flash("Invalid Username and/or Password!")
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -109,7 +109,7 @@ def add_review():
             "created_by": session["user"]
         }
         mongo.db.reviews.insert_one(review)
-        flash("Review Successfully Added")
+        flash("Review Successfully Added!")
         return redirect(url_for("get_games"))
 
     game = mongo.db.games.find().sort("game_title", 1)
@@ -133,6 +133,13 @@ def edit_review(review_id):
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     game = mongo.db.games.find().sort("game_title", 1)
     return render_template("game_card.html", review=review, game=game)
+
+
+@app.route("/delete_review/<review_id>")
+def delete_review(review_id):
+    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+    flash("Review Successfully Deleted!")
+    return redirect(url_for("home"))
 
 
 if __name__ == "__main__":

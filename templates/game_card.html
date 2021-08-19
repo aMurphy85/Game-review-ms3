@@ -196,9 +196,35 @@
                             <!-- edit review modal -->
                             <!-- Modal2 Trigger -->
                             {% if session.user|lower == review.created_by|lower %}
-                                <a class="waves-effect waves-light btn-small modal-trigger red darken-4" href="#modal2" id="edit-btn">
-                                    edit <i class="fas fa-pen"></i>
+                                <a class="waves-effect waves-light btn-small modal-trigger red darken-4" 
+                                    href="#modal2" id="edit-btn">
+                                    Edit <i class="fas fa-pen"></i>
                                 </a>
+                                <!-- modal3 trigger-->
+                                <a class="waves-effect waves-light btn-small modal-trigger red darken-4" 
+                                    href="#modal3" id="edit-btn">
+                                    Delete <i class="far fa-trash-alt"></i>
+                                </a>
+
+                                <!-- Modal Structure -->
+                                <div id="modal3" class="modal">
+                                    <div class="modal-content grey darken-3">
+                                        <div class="row center-align">
+                                            <strong class="white-text">Are you sure you want to delete?</strong>
+                                        </div>
+                                        <div class="row center-align">
+                                            <a class="waves-effect waves-light btn-small modal-trigger red darken-4" 
+                                                href="{{ url_for('delete_review', review_id=review._id) }}" id="edit-btn">
+                                                Yes? <i class="far fa-thumbs-up"></i>
+                                            </a>
+                                            <a class="waves-effect waves-light btn-small modal-trigger red darken-4" 
+                                                href="{{ url_for('get_games') }}" id="edit-btn">
+                                                No? <i class="far fa-thumbs-down"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
                             {% endif %}
                             
                         </div>
