@@ -89,14 +89,14 @@ h3 {
     margin: 20px auto 20px auto;
     padding: 15px;
     text-align: center;
-    height: fit-content;
-    width: 90%;
+    width: 90%;    
 }
 
 #header {
     color: rgba(97, 97, 97, 0.5);
     font-size: 50px;
-    letter-spacing: 15px;
+    letter-spacing: 17px;
+    margin: auto;
     text-transform: uppercase;
 }
 
@@ -175,6 +175,11 @@ img {
 .game-card {
     margin: 30px 0 30px 0;
     border: 1px solid #fafafa;
+}
+
+.game-tile-title {
+    text-transform: capitalize;
+    font-size: 18px;
 }
 
 #card-image {
