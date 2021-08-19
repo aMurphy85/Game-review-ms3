@@ -182,7 +182,11 @@ img {
     width: 100%;
 }
 
-.submit-btn {
+.review-header {
+    margin-top: 10px;
+}
+
+#btn {
     margin: 25px 0 15px 0;
 }
 
@@ -255,6 +259,10 @@ label:hover, label:hover ~ label {color:orange;}
 .card-content
 p {
     margin: 5px;
+}
+
+.btn-small {
+    margin: 3px;
 }
 
 /* ------------------------------------------------------ footer */

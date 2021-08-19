@@ -6,8 +6,8 @@ $(document).ready(function(){
   }
   );
   $('.modal').modal();
-  $('.datepicker').datepicker();
+  $('.datepicker').datepicker({
+      yearRange: 1,
+
+  });
 });
-
-// star rating
-

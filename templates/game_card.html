@@ -65,10 +65,10 @@
                     </div>
                 </div>
 
-                
+                <!-- Modal trigger -->
                 <div class="row">
                     <div class="col s12 center-align">
-                        <a class="waves-effect waves-light btn modal-trigger red darken-4 submit-btn" href="#modal1">
+                        <a class="waves-effect waves-light btn-small modal-trigger red darken-4" href="#modal1" id="btn">
                             Leave a review <i class="fas fa-pen"></i>
                         </a>
                     </div>
@@ -91,14 +91,16 @@
                             <!-- review date picker -->
                             <div class="row">
                                 <div class="col s4 offset-s4 center-align">
-                                    <input type="text" class="datepicker white-text center-align" id="date" name="date">
-                                    <label class="white-text" for="date">Date of review</label>
+                                    <input type="text" class="datepicker white-text center-align" id="date" name="date" required>
+                                    <label class="white-text" for="date">
+                                        <i class="far fa-calendar-alt"></i> Date of review
+                                    </label>
                                 </div>
                             </div>
 
                             <!-- review text area -->
                             <div class="row">
-                                <div class="col s12">
+                                <div class="col s12 review-header">
                                     <p class="white-text center-align"><strong>Review</strong></p>
                                 </div>
                             </div>
@@ -108,7 +110,10 @@
                                 <div class="input-field col s10 m8 l8 offset-s1 offset-m2 offset-l2">                                            
                                     <textarea id="user_review" name="user_review" minlength="5"
                                         maxlength="200" class="materialize-textarea white-text validate" required></textarea>
-                                    <label class="white-text" for="user_review"><small>Leave your review here...</small></label>
+                                    <label class="white-text" for="user_review">
+                                        <i class="fas fa-pencil-alt white-text"></i>
+                                        <small>Leave your review here...</small>
+                                    </label>
                                 </div>
                             </div>                              
 
@@ -124,19 +129,19 @@
                                 
                                 <div class="rating center-align">                                 
                                     <!-- 5 star rating -->
-                                    <input type="radio" id="radio-btn-1" name="star_rating" value="5 stars">
+                                    <input type="radio" id="radio-btn-1" name="star_rating" value="5 stars" required>
                                     <label class="star-label" for="radio-btn-1">&#9733;</label>
                                     
-                                    <input type="radio" id="radio-btn-2" name="star_rating" value="4 stars">
+                                    <input type="radio" id="radio-btn-2" name="star_rating" value="4 stars" required>
                                     <label class="star-label" for="radio-btn-2">&#9733;</label>
                                     
-                                    <input type="radio" id="radio-btn-3" name="star_rating" value="3 stars">
+                                    <input type="radio" id="radio-btn-3" name="star_rating" value="3 stars" required>
                                     <label class="star-label" for="radio-btn-3">&#9733;</label>
                                     
-                                    <input type="radio" id="radio-btn-4" name="star_rating" value="2 stars">
+                                    <input type="radio" id="radio-btn-4" name="star_rating" value="2 stars" required>
                                     <label class="star-label" for="radio-btn-4">&#9733;</label>
                                     
-                                    <input type="radio" id="radio-btn-5" name="star_rating" value="1 star">
+                                    <input type="radio" id="radio-btn-5" name="star_rating" value="1 star" required>
                                     <label class="star-label" for="radio-btn-5">&#9733;</label>
                                 </div>
                                                      
@@ -149,7 +154,7 @@
                             
                             <div class="row">
                                 <div class="col s12 center-align">
-                                    <button class="btn waves-effect red darken-3 submit-btn" type="submit">
+                                    <button class="btn waves-effect red darken-3" type="submit" id="btn">
                                         Submit Review
                                         <i class="fas fa-paper-plane right"></i>
                                     </button>
@@ -158,8 +163,8 @@
                         </form>
 
                         <div class="modal-footer grey darken-4">
-                            <a href="#!" class="modal-close white-text">Close</a>
-                          </div>
+                            <a href="#!" class="modal-close waves-effect waves-light btn-small red darken-4">Close</a>
+                        </div>
 
                     </div>
                 </div>
@@ -198,6 +203,110 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Modal Trigger -->
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <a class="waves-effect waves-light btn-small modal-trigger red darken-4" href="#modal2">
+                            edit <i class="fas fa-pen"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Modal Structure -->
+                <div id="modal2" class="modal col m10 l8 grey darken-4">
+                    <div class="modal-content grey darken-4" id="card-panel">
+                        <div class="container center-align">
+                            <h4 class="white-text">Edit review</h4>
+                        </div>
+
+                        <div class="col s12 m8 l6 offset-m2 offset-l3 card-image" id="modal-img">
+                            <img src="{{ game.game_url }}">
+                        </div>
+
+                        <!-- review input form -->
+                        <form  method="POST" action="{{ url_for('edit_review', review_id=review._id) }}">
+
+                            <!-- review date picker -->
+                            <div class="row">
+                                <div class="col s4 offset-s4 center-align">
+                                    <input type="text" class="datepicker white-text center-align" id="date" name="date" required>
+                                    <label class="white-text" for="date">
+                                        <i class="far fa-calendar-alt"></i> Date of review
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- review text area -->
+                            <div class="row">
+                                <div class="col s12 review-header">
+                                    <p class="white-text center-align"><strong>Review</strong></p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <input type="hidden" value="{{ game.game_title }}" name="game_title" />
+                                <div class="input-field col s10 m8 l8 offset-s1 offset-m2 offset-l2">                                            
+                                    <textarea id="user_review" name="user_review" minlength="5"
+                                        maxlength="200" class="materialize-textarea white-text validate" required></textarea>
+                                    <label class="white-text" for="user_review">
+                                        <i class="fas fa-pencil-alt white-text"></i>
+                                        <small>Leave your review here...</small>
+                                    </label>
+                                </div>
+                            </div>                              
+
+                            <!-- star rating code from 
+                                https://gist.github.com/blairanderson/7f9d1c08345c6573e09edaa1f7316fa1-->
+                            <div class="row">
+                                <div class="col s12 center-align">
+                                    <p class="white-text"><strong>Rating</strong></p>
+                                </div>
+                            </div>
+
+                            <div class="row center-align">
+                                
+                                <div class="rating center-align">                                 
+                                    <!-- 5 star rating -->
+                                    <input type="radio" id="radio-btn-1" name="star_rating" value="5 stars" required>
+                                    <label class="star-label" for="radio-btn-1">&#9733;</label>
+                                    
+                                    <input type="radio" id="radio-btn-2" name="star_rating" value="4 stars" required>
+                                    <label class="star-label" for="radio-btn-2">&#9733;</label>
+                                    
+                                    <input type="radio" id="radio-btn-3" name="star_rating" value="3 stars" required>
+                                    <label class="star-label" for="radio-btn-3">&#9733;</label>
+                                    
+                                    <input type="radio" id="radio-btn-4" name="star_rating" value="2 stars" required>
+                                    <label class="star-label" for="radio-btn-4">&#9733;</label>
+                                    
+                                    <input type="radio" id="radio-btn-5" name="star_rating" value="1 star" required>
+                                    <label class="star-label" for="radio-btn-5">&#9733;</label>
+                                </div>
+                                                     
+                            </div>
+                            <div class="row">
+                                <div class="col s12 center-align">
+                                    <p class="white-text"><small>(select a star amount)</small></p>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col s12 center-align">
+                                    <button class="btn waves-effect red darken-3" type="submit" id="btn">
+                                        Resubmit Review
+                                        <i class="fas fa-edit right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="modal-footer grey darken-4">
+                            <a href="#!" class="modal-close waves-effect waves-light btn-small red darken-4">Close</a>
+                        </div>
+                    </div>
+                </div>
+
                 {% else %}
                 <div class="row">
                     <div class="col s12 center-align">
@@ -211,7 +320,7 @@
 
 <div class="row center-align">
     <div class="col s12">
-        <a class="btn waves-effect red darken-3 back-btn" href="{{ url_for('get_games') }}" type="submit" name="action">
+        <a class="btn waves-effect red darken-3 back-btn"  href="{{ url_for('get_games') }}" type="submit" name="action">
             <i class="fas fa-backward white-text left"></i> Back        
         </a>
     </div>

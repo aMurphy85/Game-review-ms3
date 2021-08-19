@@ -116,6 +116,13 @@ def add_review():
     return render_template("game_card.html", game=game)
 
 
+@app.route("/edit_review/<review_id>", methods=["GET", "POST"])
+def edit_review(review_id):
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    game = mongo.db.games.find().sort("game_title", 1)
+    return render_template("game_card.html", review=review, game=game)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
