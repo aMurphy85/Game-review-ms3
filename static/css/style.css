@@ -6,11 +6,13 @@ body {
     background-color: #000000;
 }
 
+/* --------------------------------------------------- flash messages */
 .flashes h4 {
     line-height: 2;
     padding: 1px;
 }
 
+/* --------------------------------------------------- nav bar */
 nav {
     border-bottom: 1px solid #fafafa;
 }
@@ -37,6 +39,7 @@ nav {
     text-decoration: underline;
 }
 
+/* -------------------------------------------- home page slider imgs */
 .card 
 .card-action {
     padding: 5px;
@@ -66,12 +69,17 @@ li
     left: 45%;
 }
 
+/* --------------------------------------------- heading elements */
 .h5 {
     margin: 5px;
 }
 
 h3 {
     margin: 10px;
+}
+
+.header {
+    margin: 20px;
 }
 
 p {
@@ -82,14 +90,25 @@ p {
     margin-bottom: 0;
 }
 
+/* -------------------------------------------- buttons */
 .register-btn {
+    margin: 30px;
+}
+
+.more-games-btn {
+    margin: 40px;
+}
+
+.btn-container
+a {
     margin: 15px;
 }
 
-.header {
-    margin: 20px;
+.back-btn {
+    margin: 40px;
 }
 
+/* ----------------------------------------------- games page / game cards */
 .game-container {
     margin: auto;
     text-align: center;
@@ -112,6 +131,7 @@ img {
 }
 
 .card-panel {
+    border: 1px solid #fafafa;
     padding: 15px;
 }
 
@@ -128,10 +148,6 @@ h2 {
 .card-image 
 img {
     height: 200px;
-}
-
-.more-games-btn {
-    margin: 40px;
 }
 
 #games {
@@ -152,22 +168,13 @@ img {
     margin: 15px 0 15px 0;
 }
 
-.btn-container
-a {
-    margin: 15px;
-}
-
-.back-btn {
-    margin: 40px;
-}
-
-/* modal styling */
+/* --------------------------------------------------- modal styling */
 .modal {
     border: 1px solid #fafafa;
 }
 
 .input-field {
-    margin: 10px;
+    margin: 20px 0 20px 0;
 }
 
 .datepicker-modal {
@@ -179,7 +186,7 @@ a {
     margin: 25px 0 15px 0;
 }
 
-/* icons */
+/* ------------------------------------------------------- icons */
 .fas {
     margin: 0 5px 0 5px;
 }
@@ -192,8 +199,8 @@ a {
     color: #ffea00;
 }
 
+/* --------------------------------------------------- star rating input */
 /* star rating code from https://codepen.io/eridesigns/pen/xOjkqA*/
-  
 /* hiding the radio buttons */
 input[type="radio"] {
   display:none;
@@ -216,7 +223,7 @@ label:hover, label:hover ~ label {color:orange;}
   unicode-bidi: bidi-override;
 }
 
-/* reviews */
+/* ------------------------------------------------------- reviews */
 .review-card {
     margin: 30px;
     padding: 15px 0 15px 0;
@@ -250,7 +257,24 @@ p {
     margin: 5px;
 }
 
-/* footer */
+/* ------------------------------------------------------ footer */
+body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+main {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+}
+
 #footer {
     border-top: 1px solid #fafafa;
     margin-top: 40px;
@@ -261,6 +285,7 @@ p {
 }
 
 #footer-2 {
+    bottom: 0;
     margin: 0 0 15px 0;
 }
 
@@ -304,7 +329,7 @@ p {
     margin: 5px;
 }
 
-/* media queries */
+/* -------------------------------------------------- media queries */
 
 @media (max-width: 992px) {
     
