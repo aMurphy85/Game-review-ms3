@@ -2,8 +2,8 @@
 {% block content %}
 
     <div class="row">
-        <div class="col s12 m10 l10 offset-l1 offset-m1">
-            <h4 class="header white-text">Games</h4>
+        <div class="header">
+            <h4><strong id="header">Games</strong></h4>
         </div>
     </div>
 
@@ -16,8 +16,8 @@
                         <input type="text" name="query" id="query" class="white-text validate" required>
                         <label for="query" class="white-text">Search Games</label>
                         <div class="col s10 m8 offset-s1 offset-m2">
-                            <a href="{{ url_for('get_games') }}" class="red darken-4 btn-small text-shadow">Reset</a>
-                            <button type="submit" class="red darken-4 btn-small text-shadow">
+                            <a href="{{ url_for('get_games') }}" class="red darken-4 btn-small">Reset</a>
+                            <button type="submit" class="red darken-4 btn-small">
                                 <i class="fas fa-search white-text"></i> Search
                             </button>
                         </div>
