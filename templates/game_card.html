@@ -108,11 +108,11 @@
 
                             <div class="row">
                                 <input type="hidden" value="{{ game.game_title }}" name="game_title" />
-                                <div class="input-field col s10 m8 l8 offset-s1 offset-m2 offset-l2">                                            
+                                <div class="input-field col s10 m8 l8 offset-s1 offset-m2 offset-l2"> 
+                                    <i class="fas fa-pencil-alt prefix white-text"></i>                                           
                                     <textarea id="user_review" name="user_review" minlength="5"
                                         maxlength="200" class="materialize-textarea white-text validate" required></textarea>
                                     <label class="white-text" for="user_review">
-                                        <i class="fas fa-pencil-alt white-text"></i>
                                         Leave your review here...
                                     </label>
                                 </div>
@@ -190,28 +190,27 @@
                     <div class="row" id="card-content">
                         <div class="col s4 m2 l2 offset-m1 offset-l1">
                             <h5 class="review-name spacer white-text">{{ review.created_by }}</h5>                            
-                            <p class="spacer white-text"><small>Posted:</small></p>
+                            <p class="spacer white-text">Posted:</p>
                             <p class="spacer white-text"><strong>{{ review.date }}</strong></p>
+
+                            <!-- edit review modal -->
+                            <!-- Modal2 Trigger -->
+                            {% if session.user|lower == review.created_by|lower %}
+                                <a class="waves-effect waves-light btn-small modal-trigger red darken-4" href="#modal2" id="edit-btn">
+                                    edit <i class="fas fa-pen"></i>
+                                </a>
+                            {% endif %}
+                            
                         </div>
                         <div class="col s8 m8 l8" id="review-card">
-                            <p class="spacer white-text"><small>Rated this game:</small></p>
+                            <p class="spacer white-text">Rated this game:</p>
                             <p class="spacer white-text"><i class="review-fas fas fa-star"></i>
                                 <strong>{{ review.star_rating }}</strong>
-                                <p class="spacer white-text">
+                                <p class="white-text" id="user-review">
                                     {{ review.user_review }}
                                 </p>
                             </p>
                         </div>
-                    </div>
-                </div>
-
-                <!-- edit review modal -->
-                <!-- Modal2 Trigger -->
-                <div class="row">
-                    <div class="col s12 center-align">
-                        <a class="waves-effect waves-light btn-small modal-trigger red darken-4" href="#modal2">
-                            edit <i class="fas fa-pen"></i>
-                        </a>
                     </div>
                 </div>
 
@@ -250,10 +249,11 @@
 
                             <div class="row">
                                 <input type="hidden" value="{{ game.game_title }}" name="game_title" />
-                                <div class="input-field col s10 m8 l8 offset-s1 offset-m2 offset-l2">                                            
+                                <div class="input-field col s10 m8 l8 offset-s1 offset-m2 offset-l2"> 
+                                    <i class="fas fa-pencil-alt prefix white-text"></i>                                           
                                     <input id="user_review" name="user_review"  type="text" minlength="5" maxlength="200"
                                         value="{{ review.user_review }}" class="validate white-text" required>
-                                    <label for="user_review"><i class="fas fa-pencil-alt white-text"></i>
+                                    <label for="user_review">
                                         Leave your review here...
                                     </label>
                                 </div>
@@ -310,7 +310,7 @@
                         </form>
 
                         <div class="modal-footer grey darken-4">
-                            <a href="#!" class="modal-close waves-effect waves-light btn-small red darken-4">Close</a>
+                            <a href="#!" class="modal-close waves-effect waves-light btn-small red darken-4 center-align">Close</a>
                         </div>
 
                     </div>
