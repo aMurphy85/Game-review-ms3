@@ -108,52 +108,74 @@ def game(game_id):
 
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
-    if request.method == "POST":
-        review = {
-            "game_reference": request.form.get("game_title"),
-            "user_review": request.form.get("user_review"),
-            "star_rating": request.form.get("star_rating"),
-            "date_created": datetime.datetime.utcnow().strftime('%B %d %Y'),
-            "created_by": session["user"]
-        }
-        mongo.db.reviews.insert_one(review)
-        flash("Review Successfully Added!")
-        return redirect(url_for("get_games"))
+    if session.get("user"):
+        if request.method == "POST":
+            review = {
+                "game_reference": request.form.get("game_title"),
+                "user_review": request.form.get("user_review"),
+                "star_rating": request.form.get("star_rating"),
+                "date_created": datetime.datetime.utcnow().strftime('%B %d %Y'),
+                "created_by": session["user"]
+            }
+            mongo.db.reviews.insert_one(review)
+            flash("Review Successfully Added!")
+            return redirect(url_for("get_games"))
 
-    game = mongo.db.games.find().sort("game_title", 1)
-    return render_template("game_card.html", game=game)
+        game = mongo.db.games.find().sort("game_title", 1)
+        return render_template("game_card.html", game=game)
+    flash("You Must Be Logged In To Add A Review!")
+    return redirect(url_for("login"))
 
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
-    if request.method == "POST":
-        update = {
-            "game_reference": request.form.get("game_title"),
-            "user_review": request.form.get("user_review"),
-            "star_rating": request.form.get("star_rating"),
-            "date": request.form.get("date"),
-            "created_by": session["user"]
-        }
-        mongo.db.reviews.update({"_id": ObjectId(review_id)}, update)
-        flash("Review Successfully Updated!")
-        return redirect(url_for("get_games"))
+    if session.get("user"):
+        if request.method == "POST":
+            username = mongo.db.users.find_one(
+                {"username": session["user"]})
+            review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+            if (session["user"] == review["created_by"]
+                    or username["admin"] == "on"):
 
-    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
-    game = mongo.db.games.find().sort("game_title", 1)
-    return render_template("game_card.html", review=review, game=game)
+                update = {
+                    "game_reference": request.form.get("game_title"),
+                    "user_review": request.form.get("user_review"),
+                    "star_rating": request.form.get("star_rating"),
+                    "date": request.form.get("date"),
+                    "created_by": session["user"]
+                }
+                mongo.db.reviews.update({"_id": ObjectId(review_id)}, update)
+                flash("Review Successfully Updated!")
+                return redirect(url_for(
+                    "get_games", usename=username, review=review))
+
+        review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+        game = mongo.db.games.find().sort("game_title", 1)
+        return render_template("game_card.html", review=review, game=game)
+    flash("You Must Be Logged In To Edit A Review!")
+    return redirect(url_for("login"))
 
 
 @app.route("/delete_review/<review_id>")
 def delete_review(review_id):
-    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
-    flash("Review Successfully Deleted!")
-    return redirect(url_for("home"))
+    if session.get("user"):
+        username = mongo.db.users.find_one(
+                {"username": session["user"]})
+        review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+        if (session["user"] == review["created_by"]
+                or username["admin"] == "on"):
+            mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+            flash("Review Successfully Deleted!")
+            return redirect(url_for(
+                "home", username=username, review=review))
+    flash("You Must Be Logged In To Edit A Review!")
+    return redirect(url_for("login"))
 
 
 # error handler
 @app.errorhandler(404)
 def not_found(e):
-  return render_template("404.html")
+    return render_template("404.html")
 
 
 if __name__ == "__main__":
