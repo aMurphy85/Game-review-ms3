@@ -19,104 +19,101 @@
 </head>
 <body>
 
-        <header>
-            <!-- top navbar -->
-            <div class="navbar-fixed">
-                <nav class="nav-extended black">
-                <div class="nav-wrapper">
-                  <a href="{{ url_for('home') }}" class="brand-logo left">
-                      <p class="title-1">Game</p>
-                      <p class="title-2 red-text darken-3">Review</p> 
-                  </a>
-                  <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars white-text nav-icon"></i></a>
-                  <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('get_games') }}">Games</a></li>
-                    {% if session.user %}
-                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                    {% else %}
-                        <li><a href="{{ url_for('login') }}">Log In</a></li>
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
-                    {% endif %} 
-                  </ul>
-                </div>
-              </nav>
-            </div>
-
-              <!-- mobile sidenav  -->
-              <ul class="sidenav grey darken-3" id="mobile-demo">
-                <li class="center-align">
-                    <h4 class="title-1 white-text">Game</h4>
-                    <h4 class="title-2 red-text darken-3">Review</h4>
-                </li>
-                <li><a class="white-text" href="{{ url_for('home') }}">Home</a></li>
-                <li><a class="white-text" href="{{ url_for('get_games') }}">Games</a></li>
+    <header>
+        <!-- top navbar -->
+        <div class="navbar-fixed">
+            <nav class="nav-extended black">
+            <div class="nav-wrapper">
+              <a href="{{ url_for('home') }}" class="brand-logo left">
+                  <p class="title-1">Game</p>
+                  <p class="title-2 red-text darken-3">Review</p> 
+              </a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars white-text nav-icon"></i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('get_games') }}">Games</a></li>
                 {% if session.user %}
-                        <li><a class="white-text" href="{{ url_for('logout') }}">Log Out</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                 {% else %}
-                    <li><a class="white-text" href="{{ url_for('login') }}">Log In</a></li>
-                    <li><a class="white-text" href="{{ url_for('register') }}">Register</a></li>
-                {% endif %}
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                {% endif %} 
               </ul>
-        </header>
+            </div>
+          </nav>
+        </div>
 
-        <section>
-            <!-- flash messages -->
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="row flashes">
-                            <div class="col s12">
-                                <h4 class="red darken-3 white-text center-align">{{ message }}</h4>
-                            </div>                        
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-        </section>
+        <!-- mobile sidenav  -->
+        <ul class="sidenav grey darken-3" id="mobile-demo">
+          <li class="center-align">
+              <h4 class="title-1 white-text">Game</h4>
+              <h4 class="title-2 red-text darken-3">Review</h4>
+          </li>
+          <li><a class="white-text" href="{{ url_for('home') }}">Home</a></li>
+          <li><a class="white-text" href="{{ url_for('get_games') }}">Games</a></li>
+          {% if session.user %}
+                  <li><a class="white-text" href="{{ url_for('logout') }}">Log Out</a></li>
+          {% else %}
+              <li><a class="white-text" href="{{ url_for('login') }}">Log In</a></li>
+              <li><a class="white-text" href="{{ url_for('register') }}">Register</a></li>
+          {% endif %}
+        </ul>
+    </header>
 
-        <!-- main content-->
-        <main>
-            {% block home_content %}
-            {% endblock %}
+    <section>
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <div class="col s12">
+                            <h4 class="red darken-3 white-text center-align">{{ message }}</h4>
+                        </div>                        
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
 
-            {% block content %}
-            {% endblock %}
+    <!-- main content-->
+    <main>
+        {% block home_content %}
+        {% endblock %}
+        {% block content %}
+        {% endblock %}
+    </main>
 
-        </main>
-
-        <!-- foter -->
-        <footer class="red darken-3" id="footer">
+    <!-- foter -->
+    <footer class="red darken-3" id="footer">
+        <div class="row">
+            <div class="col s12 center-align" id="footer-1">
+                <h5 class="white-text">Contact Us</h5>
+                <p class="white-text">contact@gamereview.net</p>
+            </div>
             <div class="row">
-                <div class="col s12 center-align" id="footer-1">
-                    <h5 class="white-text">Contact Us</h5>
-                    <p class="white-text">contact@gamereview.net</p>
-                </div>
-                <div class="row">
-                    <div class="col s12 center-align" id="footer-2">
-                        <h5 class="white-text">Links</h5>
-                        <a class="link-1 white-text" href="https://www.youtube.com/" target="_blank">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a class="link-2 white-text" href="https://www.twitch.tv/" target="_blank">
-                            <i class="fab fa-twitch"></i>
-                        </a>
-                        <a class="link-3 white-text" href="https://store.steampowered.com/" target="_blank">
-                            <i class="fab fa-steam"></i>
-                        </a>
-                        <a class="link-4 white-text" href="https://www.facebook.com/gaming/" target="_blank">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="row red darken-2">
-                    <div class="col s12 center-align">
-                        <p class="copyright white-text"><small>Copyright <span>&#169;</span> A_MURPHY web designs</small> </p>
-                    </div>
+                <div class="col s12 center-align" id="footer-2">
+                    <h5 class="white-text">Links</h5>
+                    <a class="link-1 white-text" href="https://www.youtube.com/" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a class="link-2 white-text" href="https://www.twitch.tv/" target="_blank">
+                        <i class="fab fa-twitch"></i>
+                    </a>
+                    <a class="link-3 white-text" href="https://store.steampowered.com/" target="_blank">
+                        <i class="fab fa-steam"></i>
+                    </a>
+                    <a class="link-4 white-text" href="https://www.facebook.com/gaming/" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
                 </div>
             </div>
-        </footer>
+            <div class="row red darken-2">
+                <div class="col s12 center-align">
+                    <p class="copyright white-text"><small>Copyright <span>&#169;</span> A_MURPHY web designs</small> </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

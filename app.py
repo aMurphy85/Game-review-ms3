@@ -149,6 +149,22 @@ def delete_review(review_id):
     return redirect(url_for("home"))
 
 
+# error handlers
+@app.route("/error_404")
+def error_404():
+    return render_template("error_404.html")
+
+
+@app.route("/error_500")
+def error_500():
+    return render_template("error_500.html")
+
+
+@app.route("/error_503")
+def error_503():
+    return render_template("error_503.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
