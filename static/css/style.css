@@ -109,22 +109,30 @@ p {
 /* -------------------------------------------- buttons */
 .register-btn {
     margin: 30px;
+    border-radius: 12px;
 }
 
 .more-games-btn {
     margin: 40px;
+    border-radius: 12px;
 }
 
 .btn-container
 a {
     margin: 15px;
+    border-radius: 12px;
 }
 
 .back-btn {
     margin: 40px;
+    border-radius: 12px;
 }
 
 /* ----------------------------------------------- games page / game cards */
+.search-btn {
+    border-radius: 12px;
+}
+
 .game-container {
     margin: auto;
     text-align: center;
@@ -211,10 +219,12 @@ img {
 
 #submit-btn {
     margin: 25px 5px 15px 5px;
+    border-radius: 12px;
 }
 
 #btn {
     margin: 15px 5px 15px 5px;
+    border-radius: 12px;
 }
 
 /* ------------------------------------------------------- icons */
@@ -288,12 +298,8 @@ p {
     margin: 5px;
 }
 
-.btn-small {
-    margin: 5px;
-}
-
 #fa-calender {
-    margin: 2px;
+    padding: 2px;
 }
 
 #user-review {
@@ -304,6 +310,7 @@ p {
 
 #edit-btn {
     margin-top: 10px;
+    border-radius: 12px;
 }
 
 /* ------------------------------------------------------ footer */
