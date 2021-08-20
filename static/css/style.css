@@ -42,6 +42,12 @@ nav {
     text-decoration: underline;
 }
 
+/* -------------------------------------------- side nav */
+.sidenav li > a {
+    font-size: 22px;
+    text-align: center;
+}
+
 /* -------------------------------------------- home page slider imgs */
 .site-title {
     margin: 10px;
