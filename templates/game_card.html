@@ -88,17 +88,6 @@
                         <!-- review input form -->
                         <form  method="POST" action="{{ url_for('add_review') }}">
 
-                            <!-- review date picker -->
-                            <div class="row">
-                                <div class="col s4 offset-s4 center-align">
-                                    <input type="text" class="datepicker white-text center-align" id="date" name="date" required>
-                                    <label class="white-text" for="date">
-                                        <h5 id="fa-calender"><i class="far fa-calendar-alt"></i></h5>
-                                        Re-enter date of review
-                                    </label>
-                                </div>
-                            </div>
-
                             <!-- review text area -->
                             <div class="row">
                                 <div class="col s12 review-header">
@@ -191,7 +180,7 @@
                         <div class="col s4 m2 l2 offset-m1 offset-l1">
                             <h5 class="review-name spacer white-text">{{ review.created_by }}</h5>                            
                             <p class="spacer white-text">Posted:</p>
-                            <p class="spacer white-text"><strong>{{ review.date }}</strong></p>
+                            <p class="spacer white-text"><strong>{{ review.date_created }}</strong></p>
 
                             <!-- edit review modal -->
                             <!-- Modal2 Trigger -->
@@ -253,18 +242,6 @@
 
                         <!-- review input form -->
                         <form  method="POST" action="{{ url_for('edit_review', review_id=review._id) }}">
-
-                            <!-- review date picker -->
-                            <div class="row">
-                                <div class="col s4 offset-s4 center-align">
-                                    <input type="text" class="datepicker white-text center-align" id="date" 
-                                        name="date" required>
-                                    <label class="white-text" for="date">
-                                        <h5 id="fa-calender"><i class="far fa-calendar-alt"></i></h5>
-                                        Re-enter date of review
-                                    </label>
-                                </div>
-                            </div>
 
                             <!-- review text area -->
                             <div class="row">

@@ -276,7 +276,7 @@ label:hover, label:hover ~ label {color:orange;}
 }
 
 .review-name {
-    margin-top: 5px;
+    margin: 5px;
 }
 
 .review-card {

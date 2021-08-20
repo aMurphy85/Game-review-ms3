@@ -1,4 +1,5 @@
 import os
+import datetime
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -112,7 +113,7 @@ def add_review():
             "game_reference": request.form.get("game_title"),
             "user_review": request.form.get("user_review"),
             "star_rating": request.form.get("star_rating"),
-            "date": request.form.get("date"),
+            "date_created": datetime.datetime.utcnow().strftime('%B %d %Y'),
             "created_by": session["user"]
         }
         mongo.db.reviews.insert_one(review)
@@ -150,18 +151,18 @@ def delete_review(review_id):
 
 
 # error handlers
-@app.route("/error_404")
-def error_404():
+@app.route(404)
+def page_not_found(error):
     return render_template("error_404.html")
 
 
-@app.route("/error_500")
-def error_500():
+@app.route(500)
+def internal_error(error):
     return render_template("error_500.html")
 
 
-@app.route("/error_503")
-def error_503():
+@app.route(503)
+def service_unavailable(error):
     return render_template("error_503.html")
 
 
