@@ -150,20 +150,10 @@ def delete_review(review_id):
     return redirect(url_for("home"))
 
 
-# error handlers
-@app.route(404)
-def page_not_found(error):
-    return render_template("error_404.html")
-
-
-@app.route(500)
-def internal_error(error):
-    return render_template("error_500.html")
-
-
-@app.route(503)
-def service_unavailable(error):
-    return render_template("error_503.html")
+# error handler
+@app.errorhandler(404)
+def not_found(e):
+  return render_template("404.html")
 
 
 if __name__ == "__main__":
