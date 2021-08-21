@@ -131,6 +131,7 @@ a {
 /* ----------------------------------------------- games page / game cards */
 .search-btn {
     border-radius: 12px;
+    margin: 5px;
 }
 
 .game-container {
