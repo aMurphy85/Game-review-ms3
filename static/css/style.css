@@ -200,6 +200,10 @@ img {
     margin: 15px 0 15px 0;
 }
 
+#game-info {
+    border: 1px solid #fafafa;
+}
+
 /* --------------------------------------------------- modal styling */
 .modal {
     border: 1px solid #fafafa;

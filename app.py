@@ -114,7 +114,8 @@ def add_review():
                 "game_reference": request.form.get("game_title"),
                 "user_review": request.form.get("user_review"),
                 "star_rating": request.form.get("star_rating"),
-                "date_created": datetime.datetime.utcnow().strftime('%B %d %Y'),
+                "date_created": datetime.datetime.utcnow().strftime(
+                    '%B %d %Y'),
                 "created_by": session["user"]
             }
             mongo.db.reviews.insert_one(review)
@@ -134,8 +135,7 @@ def edit_review(review_id):
             username = mongo.db.users.find_one(
                 {"username": session["user"]})
             review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
-            if (session["user"] == review["created_by"]
-                    or username["admin"] == "on"):
+            if (session["user"] == review["created_by"]):
 
                 update = {
                     "game_reference": request.form.get("game_title"),
@@ -160,14 +160,13 @@ def edit_review(review_id):
 def delete_review(review_id):
     if session.get("user"):
         username = mongo.db.users.find_one(
-                {"username": session["user"]})
+            {"username": session["user"]})
         review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
-        if (session["user"] == review["created_by"]
-                or username["admin"] == "on"):
+        if (session["user"] == review["created_by"]):
             mongo.db.reviews.remove({"_id": ObjectId(review_id)})
             flash("Review Successfully Deleted!")
             return redirect(url_for(
-                "home", username=username, review=review))
+                "home", username=username, review=review, user=user))
     flash("You Must Be Logged In To Edit A Review!")
     return redirect(url_for("login"))
 
