@@ -52,7 +52,9 @@ def register():
 
         # put user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
+        flash("Registration Successful, Welcome To Game Review!")
+        return redirect(url_for(
+                    "get_games", username=session["user"]))
     return render_template("register.html")
 
 
@@ -68,7 +70,7 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}!".format(request.form.get("username")))
+                flash("Welcome back, {}!".format(request.form.get("username")))
                 return redirect(url_for(
                     "get_games", username=session["user"]))
             else:
@@ -166,7 +168,7 @@ def delete_review(review_id):
             mongo.db.reviews.remove({"_id": ObjectId(review_id)})
             flash("Review Successfully Deleted!")
             return redirect(url_for(
-                "home", username=username, review=review, user=user))
+                "home", username=username, review=review))
     flash("You Must Be Logged In To Edit A Review!")
     return redirect(url_for("login"))
 
