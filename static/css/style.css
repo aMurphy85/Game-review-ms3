@@ -54,6 +54,7 @@ nav {
 }
 
 .site-info {
+    font-size: 22px;
     margin: 15px;
 }
 
@@ -397,7 +398,9 @@ main {
 /* -------------------------------------------------- media queries */
 
 @media (max-width: 992px) {
-    
+    .site-info {
+        font-size: 19px;
+    }
 }
 
 @media (max-width: 576px) { 
@@ -416,6 +419,9 @@ main {
     }   
     .slides {
         height:370px !important;
+    }
+    .site-info {
+        font-size: 17px;
     }
     #card-image {
         height: 270px;
