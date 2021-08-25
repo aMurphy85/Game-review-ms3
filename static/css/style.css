@@ -50,7 +50,11 @@ nav {
 
 /* -------------------------------------------- home page slider imgs */
 .site-title {
-    margin: 10px;
+    margin: 15px;
+}
+
+.site-info {
+    margin: 15px;
 }
 
 .card 
